@@ -124,7 +124,8 @@ systolic2 systolic2 (.clk(clk), .start(start2), .stop(stop2), .relu_out(relu_out
    
 control control (.clk(clk), .reset(reset), .counter1(counter1), .counter2(counter2), .start1(start1), .start2(start2), .stop1(stop1), .stop2(stop2), .rdata1(w1_0), .rdata2(w2_0));
 
-wbmem wbmem (.clk(clk), .ctr1(counter1), .ctr2(counter2), 
+	wbmem wbmem (.clk(clk), .ctr1(counter1), .ctr2(counter2), .w1_0(w1_0), .w1_1(w1_1), .w1_2(w1_2),.w1_3(w1_3),.w1_4(w1_4),.w1_5(w1_5),.w1_6(w1_6),.w1_7(w1_7),.w1_8(w1_8),.w1_9(w1_9),.w1_10(w1_10),.w1_11(w1_11),.w1_12(w1_12), .w1_13(w1_13), .w1_14(w1_14), .w1_15(w1_15), .w1_16(w1_16), 
+.w1_17(w1_17), .w1_18(w1_18), .w1_19(w1_19), .w1_20(w1_20), .w1_21(w1_21), .w1_22(w1_22), .w1_23(w1_23), .w1_24(w1_24), .w1_25(w1_25), .w1_26(w1_26), .w1_27(w1_27), .w1_28(w1_28), .w1_29(w1_29), .w1_30(w1_30), .w1_31(w1_31), .w2_0(w2_0), .w2_1(w2_1), .w2_2(w2_2), .w2_3(w2_3), .w2_4(w2_4), .w2_5(w2_5), .w2_6(w2_6), .w2_7(w2_7), .w2_8(w2_8), .w2_9(w2_9)); 
 
 endmodule // systolic1
 
