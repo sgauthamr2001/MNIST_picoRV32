@@ -8,7 +8,7 @@ module mac (
                  // Outputs
                  p,
                  // Inputs
-                 clk, start, stop, w,im
+                 clk, start, stop, w, im
                  ) ;
    input                 clk, start, stop;
    input [31:0]          w;   // Integer input corresponding to the weights

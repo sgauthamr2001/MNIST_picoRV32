@@ -27,9 +27,10 @@ module control (
             else if (stop1) counter1 <= counter1;
 			else        counter1 <= counter1 + 1;
 			
-			if (start2) counter2 <= 0;
+            if (start1) counter2 <= 0;
             else if (stop2) counter2 <= counter2;
-			else        counter2 <= counter2 + 1;
+            else if (start2) counter2 <= counter2 + 1;
+            else counter2 <= 0; 
 
 		end
 

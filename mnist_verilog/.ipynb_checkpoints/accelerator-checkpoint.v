@@ -103,7 +103,8 @@ module accelerator (
 	wire [31:0]   p31;
 
 	wire [31:0]   relu_out;
-
+  //  wire [31:0]   result_test;
+    
 /*    
 	wire [31:0]   result0;
 	wire [31:0]   result1;
@@ -117,6 +118,7 @@ module accelerator (
 	wire [31:0]   result9;
 */    
 
+   // assign result0 = counter2; 
 	wire [31:0]   counter1;
 	wire [31:0]   counter2;
 
@@ -126,7 +128,6 @@ module accelerator (
 	wire          stop1;
 	wire          stop2;
 
-    assign   counter1 = counter1;
     assign   ready = stop1 & stop2;
 
     // Insert code to send out result sequentially, rather than parallely right now
