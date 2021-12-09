@@ -21,6 +21,10 @@ module control (
 		assign start2 = stop1;
 		assign stop2  = (rdata2 == 32'h7fffffff)?1:0;
 
+        initial begin 
+            counter1 <= 0;
+            counter2 <= 0;
+        end
 		always @(posedge clk) begin
 			
 			if (start1) counter1 <= 0;

@@ -26,25 +26,19 @@ Vpicorv32_wrapper_axi4_mem_periph::~Vpicorv32_wrapper_axi4_mem_periph() {
 VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__1(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__1\n"); );
     Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Variables
-    IData/*31:0*/ __Vdly__accel__DOT__counter1;
-    WData/*25087:0*/ __Vtemp2[784];
-    WData/*25087:0*/ __Vtemp3[784];
-    IData/*31:0*/ __Vilp;
     // Body
-    __Vdly__accel__DOT__counter1 = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter1 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1;
     vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter2 
         = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__relu_out 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out;
-    __Vdly__accel__DOT__counter1 = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
-                                     ? 0U : (((0x7fffffffU 
-                                               == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-                                               ? 1U
-                                               : 0U)
-                                              ? vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1
-                                              : ((IData)(1U) 
-                                                 + vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__invoked 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset) 
+           | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__invoked));
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter1 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
+            ? 0U : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+                      ? 1U : 0U) ? vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1
+                     : ((IData)(1U) + vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)));
     vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter2 
         = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
             ? 0U : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
@@ -53,7 +47,1417 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
                           ? 1U : 0U) ? ((IData)(1U) 
                                         + vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)
                          : 0U)));
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__relu_out 
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p0)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p0) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p1)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p1) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_1)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p0 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p1 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_1 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w33mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+}
+
+VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__3(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__3\n"); );
+    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__reset 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rdata;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v0 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v1 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v0 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v1 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v2 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v3 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v4 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v5 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v6 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v7 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v0 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v1 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v2 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v3 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v4 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v5 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v6 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v7 = 0U;
+}
+
+void Vpicorv32_wrapper_axi4_mem_periph::_initial__TOP__picorv32_wrapper__mem__4(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_initial__TOP__picorv32_wrapper__mem__4\n"); );
+    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Variables
+    WData/*159:0*/ __Vtemp3[5];
+    WData/*159:0*/ __Vtemp5[5];
+    WData/*159:0*/ __Vtemp6[5];
+    WData/*159:0*/ __Vtemp7[5];
+    WData/*159:0*/ __Vtemp8[5];
+    WData/*159:0*/ __Vtemp9[5];
+    WData/*159:0*/ __Vtemp10[5];
+    WData/*159:0*/ __Vtemp11[5];
+    WData/*159:0*/ __Vtemp12[5];
+    WData/*159:0*/ __Vtemp13[5];
+    WData/*159:0*/ __Vtemp14[5];
+    WData/*159:0*/ __Vtemp15[5];
+    WData/*159:0*/ __Vtemp16[5];
+    WData/*159:0*/ __Vtemp17[5];
+    WData/*159:0*/ __Vtemp18[5];
+    WData/*159:0*/ __Vtemp19[5];
+    WData/*159:0*/ __Vtemp20[5];
+    WData/*159:0*/ __Vtemp21[5];
+    WData/*159:0*/ __Vtemp22[5];
+    WData/*159:0*/ __Vtemp23[5];
+    WData/*159:0*/ __Vtemp24[5];
+    WData/*159:0*/ __Vtemp25[5];
+    WData/*159:0*/ __Vtemp26[5];
+    WData/*159:0*/ __Vtemp27[5];
+    WData/*159:0*/ __Vtemp28[5];
+    WData/*159:0*/ __Vtemp29[5];
+    WData/*159:0*/ __Vtemp30[5];
+    WData/*159:0*/ __Vtemp31[5];
+    WData/*159:0*/ __Vtemp32[5];
+    WData/*159:0*/ __Vtemp33[5];
+    WData/*159:0*/ __Vtemp34[5];
+    WData/*159:0*/ __Vtemp35[5];
+    WData/*159:0*/ __Vtemp36[5];
+    WData/*159:0*/ __Vtemp37[5];
+    WData/*159:0*/ __Vtemp38[5];
+    WData/*159:0*/ __Vtemp39[5];
+    WData/*159:0*/ __Vtemp40[5];
+    WData/*159:0*/ __Vtemp41[5];
+    WData/*159:0*/ __Vtemp42[5];
+    WData/*159:0*/ __Vtemp43[5];
+    WData/*159:0*/ __Vtemp44[5];
+    WData/*159:0*/ __Vtemp45[5];
+    WData/*159:0*/ __Vtemp46[5];
+    // Body
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose 
+        = (0U != VL_TESTPLUSARGS_I("verbose"));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
+    __Vtemp3[0U] = 0x2e6d656dU;
+    __Vtemp3[1U] = 0x64617461U;
+    __Vtemp3[2U] = 0x72652f78U;
+    __Vtemp3[3U] = 0x726d7761U;
+    __Vtemp3[4U] = 0x6669U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp3)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.xmem
+                 , 0, ~VL_ULL(0));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i = 0U;
+    while (VL_GTS_III(1,32,32, 0xf4240U, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i)) {
+        vlSymsp->TOP__picorv32_wrapper__mem.wkmem[(0x7ffffU 
+                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i)] = 0U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i 
+            = ((IData)(1U) + vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i);
+    }
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__invoked = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid = 0U;
+    __Vtemp5[0U] = 0x2e6d656dU;
+    __Vtemp5[1U] = 0x30305f30U;
+    __Vtemp5[2U] = 0x74732f77U;
+    __Vtemp5[3U] = 0x65696768U;
+    __Vtemp5[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp5)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w00mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp6[0U] = 0x2e6d656dU;
+    __Vtemp6[1U] = 0x30315f30U;
+    __Vtemp6[2U] = 0x74732f77U;
+    __Vtemp6[3U] = 0x65696768U;
+    __Vtemp6[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp6)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w01mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp7[0U] = 0x2e6d656dU;
+    __Vtemp7[1U] = 0x30325f30U;
+    __Vtemp7[2U] = 0x74732f77U;
+    __Vtemp7[3U] = 0x65696768U;
+    __Vtemp7[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp7)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w02mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp8[0U] = 0x2e6d656dU;
+    __Vtemp8[1U] = 0x30335f30U;
+    __Vtemp8[2U] = 0x74732f77U;
+    __Vtemp8[3U] = 0x65696768U;
+    __Vtemp8[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp8)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w03mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp9[0U] = 0x2e6d656dU;
+    __Vtemp9[1U] = 0x30345f30U;
+    __Vtemp9[2U] = 0x74732f77U;
+    __Vtemp9[3U] = 0x65696768U;
+    __Vtemp9[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp9)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w04mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp10[0U] = 0x2e6d656dU;
+    __Vtemp10[1U] = 0x30355f30U;
+    __Vtemp10[2U] = 0x74732f77U;
+    __Vtemp10[3U] = 0x65696768U;
+    __Vtemp10[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp10)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w05mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp11[0U] = 0x2e6d656dU;
+    __Vtemp11[1U] = 0x30365f30U;
+    __Vtemp11[2U] = 0x74732f77U;
+    __Vtemp11[3U] = 0x65696768U;
+    __Vtemp11[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp11)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w06mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp12[0U] = 0x2e6d656dU;
+    __Vtemp12[1U] = 0x30375f30U;
+    __Vtemp12[2U] = 0x74732f77U;
+    __Vtemp12[3U] = 0x65696768U;
+    __Vtemp12[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp12)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w07mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp13[0U] = 0x2e6d656dU;
+    __Vtemp13[1U] = 0x30385f30U;
+    __Vtemp13[2U] = 0x74732f77U;
+    __Vtemp13[3U] = 0x65696768U;
+    __Vtemp13[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp13)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w08mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp14[0U] = 0x2e6d656dU;
+    __Vtemp14[1U] = 0x30395f30U;
+    __Vtemp14[2U] = 0x74732f77U;
+    __Vtemp14[3U] = 0x65696768U;
+    __Vtemp14[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp14)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w09mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp15[0U] = 0x2e6d656dU;
+    __Vtemp15[1U] = 0x31305f30U;
+    __Vtemp15[2U] = 0x74732f77U;
+    __Vtemp15[3U] = 0x65696768U;
+    __Vtemp15[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp15)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w10mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp16[0U] = 0x2e6d656dU;
+    __Vtemp16[1U] = 0x31315f30U;
+    __Vtemp16[2U] = 0x74732f77U;
+    __Vtemp16[3U] = 0x65696768U;
+    __Vtemp16[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp16)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w11mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp17[0U] = 0x2e6d656dU;
+    __Vtemp17[1U] = 0x31325f30U;
+    __Vtemp17[2U] = 0x74732f77U;
+    __Vtemp17[3U] = 0x65696768U;
+    __Vtemp17[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp17)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w12mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp18[0U] = 0x2e6d656dU;
+    __Vtemp18[1U] = 0x31335f30U;
+    __Vtemp18[2U] = 0x74732f77U;
+    __Vtemp18[3U] = 0x65696768U;
+    __Vtemp18[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp18)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w13mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp19[0U] = 0x2e6d656dU;
+    __Vtemp19[1U] = 0x31345f30U;
+    __Vtemp19[2U] = 0x74732f77U;
+    __Vtemp19[3U] = 0x65696768U;
+    __Vtemp19[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp19)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w14mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp20[0U] = 0x2e6d656dU;
+    __Vtemp20[1U] = 0x31355f30U;
+    __Vtemp20[2U] = 0x74732f77U;
+    __Vtemp20[3U] = 0x65696768U;
+    __Vtemp20[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp20)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w15mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp21[0U] = 0x2e6d656dU;
+    __Vtemp21[1U] = 0x31365f30U;
+    __Vtemp21[2U] = 0x74732f77U;
+    __Vtemp21[3U] = 0x65696768U;
+    __Vtemp21[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp21)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w16mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp22[0U] = 0x2e6d656dU;
+    __Vtemp22[1U] = 0x31375f30U;
+    __Vtemp22[2U] = 0x74732f77U;
+    __Vtemp22[3U] = 0x65696768U;
+    __Vtemp22[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp22)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w17mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp23[0U] = 0x2e6d656dU;
+    __Vtemp23[1U] = 0x31385f30U;
+    __Vtemp23[2U] = 0x74732f77U;
+    __Vtemp23[3U] = 0x65696768U;
+    __Vtemp23[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp23)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w18mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp24[0U] = 0x2e6d656dU;
+    __Vtemp24[1U] = 0x31395f30U;
+    __Vtemp24[2U] = 0x74732f77U;
+    __Vtemp24[3U] = 0x65696768U;
+    __Vtemp24[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp24)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w19mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp25[0U] = 0x2e6d656dU;
+    __Vtemp25[1U] = 0x32305f30U;
+    __Vtemp25[2U] = 0x74732f77U;
+    __Vtemp25[3U] = 0x65696768U;
+    __Vtemp25[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp25)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w20mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp26[0U] = 0x2e6d656dU;
+    __Vtemp26[1U] = 0x32315f30U;
+    __Vtemp26[2U] = 0x74732f77U;
+    __Vtemp26[3U] = 0x65696768U;
+    __Vtemp26[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp26)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w21mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp27[0U] = 0x2e6d656dU;
+    __Vtemp27[1U] = 0x32325f30U;
+    __Vtemp27[2U] = 0x74732f77U;
+    __Vtemp27[3U] = 0x65696768U;
+    __Vtemp27[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp27)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w22mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp28[0U] = 0x2e6d656dU;
+    __Vtemp28[1U] = 0x32335f30U;
+    __Vtemp28[2U] = 0x74732f77U;
+    __Vtemp28[3U] = 0x65696768U;
+    __Vtemp28[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp28)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w23mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp29[0U] = 0x2e6d656dU;
+    __Vtemp29[1U] = 0x32345f30U;
+    __Vtemp29[2U] = 0x74732f77U;
+    __Vtemp29[3U] = 0x65696768U;
+    __Vtemp29[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp29)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w24mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp30[0U] = 0x2e6d656dU;
+    __Vtemp30[1U] = 0x32355f30U;
+    __Vtemp30[2U] = 0x74732f77U;
+    __Vtemp30[3U] = 0x65696768U;
+    __Vtemp30[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp30)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w25mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp31[0U] = 0x2e6d656dU;
+    __Vtemp31[1U] = 0x32365f30U;
+    __Vtemp31[2U] = 0x74732f77U;
+    __Vtemp31[3U] = 0x65696768U;
+    __Vtemp31[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp31)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w26mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp32[0U] = 0x2e6d656dU;
+    __Vtemp32[1U] = 0x32375f30U;
+    __Vtemp32[2U] = 0x74732f77U;
+    __Vtemp32[3U] = 0x65696768U;
+    __Vtemp32[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp32)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w27mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp33[0U] = 0x2e6d656dU;
+    __Vtemp33[1U] = 0x32385f30U;
+    __Vtemp33[2U] = 0x74732f77U;
+    __Vtemp33[3U] = 0x65696768U;
+    __Vtemp33[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp33)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w28mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp34[0U] = 0x2e6d656dU;
+    __Vtemp34[1U] = 0x32395f30U;
+    __Vtemp34[2U] = 0x74732f77U;
+    __Vtemp34[3U] = 0x65696768U;
+    __Vtemp34[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp34)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w29mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp35[0U] = 0x2e6d656dU;
+    __Vtemp35[1U] = 0x33305f30U;
+    __Vtemp35[2U] = 0x74732f77U;
+    __Vtemp35[3U] = 0x65696768U;
+    __Vtemp35[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp35)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w30mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp36[0U] = 0x2e6d656dU;
+    __Vtemp36[1U] = 0x33315f30U;
+    __Vtemp36[2U] = 0x74732f77U;
+    __Vtemp36[3U] = 0x65696768U;
+    __Vtemp36[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp36)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w31mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp37[0U] = 0x2e6d656dU;
+    __Vtemp37[1U] = 0x30305f31U;
+    __Vtemp37[2U] = 0x74732f77U;
+    __Vtemp37[3U] = 0x65696768U;
+    __Vtemp37[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp37)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w32mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp38[0U] = 0x2e6d656dU;
+    __Vtemp38[1U] = 0x30315f31U;
+    __Vtemp38[2U] = 0x74732f77U;
+    __Vtemp38[3U] = 0x65696768U;
+    __Vtemp38[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp38)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w33mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp39[0U] = 0x2e6d656dU;
+    __Vtemp39[1U] = 0x30325f31U;
+    __Vtemp39[2U] = 0x74732f77U;
+    __Vtemp39[3U] = 0x65696768U;
+    __Vtemp39[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp39)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w34mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp40[0U] = 0x2e6d656dU;
+    __Vtemp40[1U] = 0x30335f31U;
+    __Vtemp40[2U] = 0x74732f77U;
+    __Vtemp40[3U] = 0x65696768U;
+    __Vtemp40[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp40)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w35mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp41[0U] = 0x2e6d656dU;
+    __Vtemp41[1U] = 0x30345f31U;
+    __Vtemp41[2U] = 0x74732f77U;
+    __Vtemp41[3U] = 0x65696768U;
+    __Vtemp41[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp41)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w36mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp42[0U] = 0x2e6d656dU;
+    __Vtemp42[1U] = 0x30355f31U;
+    __Vtemp42[2U] = 0x74732f77U;
+    __Vtemp42[3U] = 0x65696768U;
+    __Vtemp42[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp42)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w37mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp43[0U] = 0x2e6d656dU;
+    __Vtemp43[1U] = 0x30365f31U;
+    __Vtemp43[2U] = 0x74732f77U;
+    __Vtemp43[3U] = 0x65696768U;
+    __Vtemp43[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp43)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w38mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp44[0U] = 0x2e6d656dU;
+    __Vtemp44[1U] = 0x30375f31U;
+    __Vtemp44[2U] = 0x74732f77U;
+    __Vtemp44[3U] = 0x65696768U;
+    __Vtemp44[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp44)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w39mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp45[0U] = 0x2e6d656dU;
+    __Vtemp45[1U] = 0x30385f31U;
+    __Vtemp45[2U] = 0x74732f77U;
+    __Vtemp45[3U] = 0x65696768U;
+    __Vtemp45[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp45)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w40mem
+                 , 0, ~VL_ULL(0));
+    __Vtemp46[0U] = 0x2e6d656dU;
+    __Vtemp46[1U] = 0x30395f31U;
+    __Vtemp46[2U] = 0x74732f77U;
+    __Vtemp46[3U] = 0x65696768U;
+    __Vtemp46[4U] = 0x77U;
+    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp46)
+                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w41mem
+                 , 0, ~VL_ULL(0));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1 = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2 = 0U;
+}
+
+void Vpicorv32_wrapper_axi4_mem_periph::_settle__TOP__picorv32_wrapper__mem__5(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_settle__TOP__picorv32_wrapper__mem__5\n"); );
+    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Variables
+    IData/*31:0*/ __Vilp;
+    // Body
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p0 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__p1 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p0 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p2 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac2__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p3 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac3__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p4 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac4__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p5 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac5__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p6 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac6__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p7 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac7__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p8 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac8__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p9 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac9__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p10 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac10__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p11 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac11__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p12 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac12__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p13 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac13__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p14 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac14__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p15 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac15__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p16 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac16__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p17 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac17__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p18 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac18__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p19 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac19__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p20 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac20__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p21 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac21__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p22 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac22__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p23 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac23__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p24 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac24__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p25 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac25__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p26 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac26__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p27 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac27__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p28 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac28__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p29 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac29__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p30 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac30__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p31 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac31__DOT__d);
+    __Vilp = 0U;
+    while ((__Vilp <= 0x310U)) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__in_image[__Vilp] 
+            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__image
+            [__Vilp];
+        __Vilp = ((IData)(1U) + __Vilp);
+    }
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready 
+        = (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__invoked) 
+            & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+                ? 1U : 0U)) & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                                ? 1U : 0U));
+    vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start 
+        = (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+             ? 1U : 0U) & (0U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2));
+}
+
+VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__6(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__6\n"); );
+    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
+            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
+                       ? 4U : 0U) >> 2U));
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 1U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 1U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 1U;
+    }
+    if (((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid)) 
+         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en))) {
+        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+            VL_WRITEF("RD: ADDR=%08x DATA=%08x%s\n",
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr,
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.memory
+                      [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                    >> 2U))],40,((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn)
+                                                  ? VL_ULL(0x20494e534e)
+                                                  : VL_ULL(0)));
+        }
+        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                = vlSymsp->TOP__picorv32_wrapper__mem.memory
+                [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                              >> 2U))];
+            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+        } else {
+            if (((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
+                 & (0x31000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                    = vlSymsp->TOP__picorv32_wrapper__mem.xmem
+                    [(0x3ffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                 - (IData)(0x30000000U)) 
+                                >> 2U))];
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+            } else {
+                if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
+                     & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                        = vlSymsp->TOP__picorv32_wrapper__mem.wkmem
+                        [(0x7ffffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                       - (IData)(0x40000000U)) 
+                                      >> 2U))];
+                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                } else {
+                    if ((0x32000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready;
+                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                    } else {
+                        if ((0x33000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d);
+                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                        } else {
+                            if ((0x33000004U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                            } else {
+                                if ((0x33000008U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                } else {
+                                    if ((0x3300000cU 
+                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                    } else {
+                                        if ((0x33000010U 
+                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                        } else {
+                                            if ((0x33000014U 
+                                                 == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                            } else {
+                                                if (
+                                                    (0x33000018U 
+                                                     == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                } else {
+                                                    if (
+                                                        (0x3300001cU 
+                                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                    } else {
+                                                        if (
+                                                            (0x33000020U 
+                                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                        } else {
+                                                            if (VL_LIKELY(
+                                                                          (0x33000024U 
+                                                                           == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                            } else {
+                                                                VL_WRITEF("OUT-OF-BOUNDS MEMORY READ FROM %08x\n",
+                                                                          32,
+                                                                          vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr);
+                                                                VL_FINISH_MT("axi4_mem_periph.v", 194, "");
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if ((((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid)) 
+          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en)) 
+         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en))) {
+        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+            VL_WRITEF("WR: ADDR=%08x DATA=%08x STRB=%04b\n",
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr,
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata,
+                      4,(IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb));
+        }
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
+        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v0 
+                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v0 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v0 = 0U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v0 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v1 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 8U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v1 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v1 = 8U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v1 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v2 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 0x10U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v2 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v2 = 0x10U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v2 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v3 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 0x18U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v3 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v3 = 0x18U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v3 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+        } else {
+            if ((0x10000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+                if (VL_LIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+                    if (((0x20U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata) 
+                         & (0x80U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata))) {
+                        VL_WRITEF("OUT: '%c'\n",8,(0xffU 
+                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
+                    } else {
+                        VL_WRITEF("OUT: %3#\n",32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                    }
+                } else {
+                    VL_WRITEF("%c",8,(0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
+                }
+            } else {
+                if ((0x20000000U != vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+                    if (VL_UNLIKELY(((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                                     & (0x31000000U 
+                                        > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
+                        VL_WRITEF("Weight memory is read-only!\n");
+                    } else {
+                        if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                             & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
+                            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v0 
+                                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v0 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v0 = 0U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v0 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v1 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 8U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v1 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v1 = 8U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v1 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v2 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 0x10U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v2 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v2 = 0x10U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v2 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v3 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 0x18U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v3 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v3 = 0x18U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v3 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                        } else {
+                            if (VL_UNLIKELY((0x31000000U 
+                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__reset 
+                                    = (1U & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                                VL_WRITEF("Write %3# to the reset signal\n",
+                                          32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                            } else {
+                                if (VL_LIKELY(((0x34000000U 
+                                                <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                                               & (0x35000000U 
+                                                  > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1 
+                                        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata;
+                                    if ((0x310U >= 
+                                         (0x3ffU & 
+                                          ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                            - (IData)(0x34000000U)) 
+                                           >> 2U)))) {
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__image__v0 
+                                            = vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v0 = 1U;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__image__v0 
+                                            = (0x3ffU 
+                                               & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                   - (IData)(0x34000000U)) 
+                                                  >> 2U));
+                                    }
+                                } else {
+                                    VL_WRITEF("OUT-OF-BOUNDS MEMORY WRITE TO %08x\n",
+                                              32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr);
+                                    VL_FINISH_MT("axi4_mem_periph.v", 241, "");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 1U;
+    }
+}
+
+VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__7(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__7\n"); );
+    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Variables
+    WData/*25119:0*/ __Vtemp47[785];
+    // Body
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 0U;
+    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 0U;
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid) 
+         & ((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_valid) 
+            & (~ (IData)((0U != (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb))))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 0U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid) 
+         & ((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_valid) 
+            & (0U != (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 0U;
+    }
+    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
+          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready)) 
+         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr)))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
+            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
+                       ? 4U : 0U) >> 2U));
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
+    }
+    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
+          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready)) 
+         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr)))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
+    }
+    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
+          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready)) 
+         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata)))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
+            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
+                       ? 4U : 0U) >> 2U));
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 1U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 1U;
+    }
+    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
+         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en) 
+               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata))))) {
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
+            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 1U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 1U;
+    }
+    if (((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid)) 
+         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en))) {
+        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+            VL_WRITEF("RD: ADDR=%08x DATA=%08x%s\n",
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr,
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.memory
+                      [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                    >> 2U))],40,((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn)
+                                                  ? VL_ULL(0x20494e534e)
+                                                  : VL_ULL(0)));
+        }
+        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                = vlSymsp->TOP__picorv32_wrapper__mem.memory
+                [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                              >> 2U))];
+            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+        } else {
+            if (((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
+                 & (0x31000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                    = vlSymsp->TOP__picorv32_wrapper__mem.xmem
+                    [(0x3ffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                 - (IData)(0x30000000U)) 
+                                >> 2U))];
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+            } else {
+                if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
+                     & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                        = vlSymsp->TOP__picorv32_wrapper__mem.wkmem
+                        [(0x7ffffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
+                                       - (IData)(0x40000000U)) 
+                                      >> 2U))];
+                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                } else {
+                    if ((0x32000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready;
+                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                    } else {
+                        if ((0x33000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d);
+                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                        } else {
+                            if ((0x33000004U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                            } else {
+                                if ((0x33000008U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                } else {
+                                    if ((0x3300000cU 
+                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                    } else {
+                                        if ((0x33000010U 
+                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
+                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                        } else {
+                                            if ((0x33000014U 
+                                                 == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
+                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                            } else {
+                                                if (
+                                                    (0x33000018U 
+                                                     == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
+                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                } else {
+                                                    if (
+                                                        (0x3300001cU 
+                                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
+                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                    } else {
+                                                        if (
+                                                            (0x33000020U 
+                                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
+                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                        } else {
+                                                            if (VL_LIKELY(
+                                                                          (0x33000024U 
+                                                                           == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
+                                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
+                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
+                                                            } else {
+                                                                VL_WRITEF("OUT-OF-BOUNDS MEMORY READ FROM %08x\n",
+                                                                          32,
+                                                                          vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr);
+                                                                VL_FINISH_MT("axi4_mem_periph.v", 194, "");
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if ((((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid)) 
+          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en)) 
+         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en))) {
+        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+            VL_WRITEF("WR: ADDR=%08x DATA=%08x STRB=%04b\n",
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr,
+                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata,
+                      4,(IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb));
+        }
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
+        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
+        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v4 
+                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v4 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v4 = 0U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v4 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v5 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 8U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v5 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v5 = 8U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v5 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v6 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 0x10U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v6 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v6 = 0x10U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v6 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v7 
+                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                >> 0x18U));
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v7 = 1U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v7 = 0x18U;
+                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v7 
+                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                   >> 2U));
+            }
+        } else {
+            if ((0x10000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+                if (VL_LIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
+                    if (((0x20U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata) 
+                         & (0x80U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata))) {
+                        VL_WRITEF("OUT: '%c'\n",8,(0xffU 
+                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
+                    } else {
+                        VL_WRITEF("OUT: %3#\n",32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                    }
+                } else {
+                    VL_WRITEF("%c",8,(0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
+                }
+            } else {
+                if ((0x20000000U != vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
+                    if (VL_UNLIKELY(((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                                     & (0x31000000U 
+                                        > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
+                        VL_WRITEF("Weight memory is read-only!\n");
+                    } else {
+                        if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                             & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
+                            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v4 
+                                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v4 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v4 = 0U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v4 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v5 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 8U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v5 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v5 = 8U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v5 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v6 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 0x10U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v6 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v6 = 0x10U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v6 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v7 
+                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
+                                                >> 0x18U));
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v7 = 1U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v7 = 0x18U;
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v7 
+                                    = (0x7ffffU & (
+                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                    - (IData)(0x40000000U)) 
+                                                   >> 2U));
+                            }
+                        } else {
+                            if (VL_UNLIKELY((0x31000000U 
+                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
+                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__reset 
+                                    = (1U & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                                VL_WRITEF("Write %3# to the reset signal\n",
+                                          32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
+                            } else {
+                                if (VL_LIKELY(((0x34000000U 
+                                                <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
+                                               & (0x35000000U 
+                                                  > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
+                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1 
+                                        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata;
+                                    if ((0x310U >= 
+                                         (0x3ffU & 
+                                          ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                            - (IData)(0x34000000U)) 
+                                           >> 2U)))) {
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__image__v1 
+                                            = vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v1 = 1U;
+                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__image__v1 
+                                            = (0x3ffU 
+                                               & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
+                                                   - (IData)(0x34000000U)) 
+                                                  >> 2U));
+                                    }
+                                } else {
+                                    VL_WRITEF("OUT-OF-BOUNDS MEMORY WRITE TO %08x\n",
+                                              32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr);
+                                    VL_FINISH_MT("axi4_mem_periph.v", 241, "");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 1U;
+    }
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_2)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_3)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_4)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_5)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_6)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_7)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_8)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_9)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_2 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w34mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_3 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w35mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_4 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w36mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_5 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w37mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_6 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w38mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_7 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w39mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_8 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w40mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_9 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w41mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w32mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out 
         = (((((((((0U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2) 
                   | (1U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)) 
                  | (2U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)) 
@@ -261,6 +1665,8 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
                                                       : 0U))))))))
                         : ((0x20U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)
                             ? 1U : 0U)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter2;
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d 
         = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
             ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
@@ -269,14 +1675,6 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
                                + VL_MULS_QQQ(64,64,64, 
                                              VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__im), 
                                              VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__im), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_1)))));
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac2__DOT__d 
         = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
             ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
@@ -517,13 +1915,16 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
                                + VL_MULS_QQQ(64,64,64, 
                                              VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__im), 
                                              VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_31)))));
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
+            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1)
+                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1) 
+                               + VL_MULS_QQQ(64,64,64, 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__im), 
+                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_1)))));
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p0 
         = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_1 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w01mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)];
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p2 
         = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac2__DOT__d);
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_2 
@@ -674,1436 +2075,31 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_31 
         = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w31mem
         [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)];
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1 
+        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_1 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w01mem
+        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)];
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0 
         = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w00mem
         [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)];
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__im 
         = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset)
             ? 0U : vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__image);
-    __Vilp = 0U;
-    while ((__Vilp <= 0x30fU)) {
-        __Vtemp2[__Vilp] = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__in_image[__Vilp];
-        __Vilp = ((IData)(1U) + __Vilp);
-    }
-    VL_SHIFTL_WWI(25088,25088,32, __Vtemp3, __Vtemp2, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1);
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready 
+        = (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__invoked) 
+            & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+                ? 1U : 0U)) & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
+                                ? 1U : 0U));
+    vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start 
+        = (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
+             ? 1U : 0U) & (0U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2));
+    VL_SHIFTR_WWI(25120,25120,32, __Vtemp47, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__in_image, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1);
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__image 
         = ((0x311U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1)
-            ? __Vtemp3[0U] : 0U);
+            ? __Vtemp47[0U] : 0U);
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter1 
-        = __Vdly__accel__DOT__counter1;
-}
-
-VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__3(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__3\n"); );
-    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Body
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rdata;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v0 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v1 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v0 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v1 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v2 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v3 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v4 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v5 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v6 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v7 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v0 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v1 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v2 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v3 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v4 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v5 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v6 = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v7 = 0U;
-}
-
-void Vpicorv32_wrapper_axi4_mem_periph::_initial__TOP__picorv32_wrapper__mem__4(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_initial__TOP__picorv32_wrapper__mem__4\n"); );
-    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Variables
-    WData/*159:0*/ __Vtemp4[5];
-    WData/*159:0*/ __Vtemp6[5];
-    WData/*159:0*/ __Vtemp7[5];
-    WData/*159:0*/ __Vtemp8[5];
-    WData/*159:0*/ __Vtemp9[5];
-    WData/*159:0*/ __Vtemp10[5];
-    WData/*159:0*/ __Vtemp11[5];
-    WData/*159:0*/ __Vtemp12[5];
-    WData/*159:0*/ __Vtemp13[5];
-    WData/*159:0*/ __Vtemp14[5];
-    WData/*159:0*/ __Vtemp15[5];
-    WData/*159:0*/ __Vtemp16[5];
-    WData/*159:0*/ __Vtemp17[5];
-    WData/*159:0*/ __Vtemp18[5];
-    WData/*159:0*/ __Vtemp19[5];
-    WData/*159:0*/ __Vtemp20[5];
-    WData/*159:0*/ __Vtemp21[5];
-    WData/*159:0*/ __Vtemp22[5];
-    WData/*159:0*/ __Vtemp23[5];
-    WData/*159:0*/ __Vtemp24[5];
-    WData/*159:0*/ __Vtemp25[5];
-    WData/*159:0*/ __Vtemp26[5];
-    WData/*159:0*/ __Vtemp27[5];
-    WData/*159:0*/ __Vtemp28[5];
-    WData/*159:0*/ __Vtemp29[5];
-    WData/*159:0*/ __Vtemp30[5];
-    WData/*159:0*/ __Vtemp31[5];
-    WData/*159:0*/ __Vtemp32[5];
-    WData/*159:0*/ __Vtemp33[5];
-    WData/*159:0*/ __Vtemp34[5];
-    WData/*159:0*/ __Vtemp35[5];
-    WData/*159:0*/ __Vtemp36[5];
-    WData/*159:0*/ __Vtemp37[5];
-    WData/*159:0*/ __Vtemp38[5];
-    WData/*159:0*/ __Vtemp39[5];
-    WData/*159:0*/ __Vtemp40[5];
-    WData/*159:0*/ __Vtemp41[5];
-    WData/*159:0*/ __Vtemp42[5];
-    WData/*159:0*/ __Vtemp43[5];
-    WData/*159:0*/ __Vtemp44[5];
-    WData/*159:0*/ __Vtemp45[5];
-    WData/*159:0*/ __Vtemp46[5];
-    WData/*159:0*/ __Vtemp47[5];
-    // Body
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose 
-        = (0U != VL_TESTPLUSARGS_I("verbose"));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
-    __Vtemp4[0U] = 0x2e6d656dU;
-    __Vtemp4[1U] = 0x64617461U;
-    __Vtemp4[2U] = 0x72652f78U;
-    __Vtemp4[3U] = 0x726d7761U;
-    __Vtemp4[4U] = 0x6669U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp4)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.xmem
-                 , 0, ~VL_ULL(0));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i = 0U;
-    while (VL_GTS_III(1,32,32, 0xf4240U, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i)) {
-        vlSymsp->TOP__picorv32_wrapper__mem.wkmem[(0x7ffffU 
-                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i)] = 0U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i 
-            = ((IData)(1U) + vlSymsp->TOP__picorv32_wrapper__mem.__PVT__i);
-    }
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid = 0U;
-    __Vtemp6[0U] = 0x2e6d656dU;
-    __Vtemp6[1U] = 0x30305f30U;
-    __Vtemp6[2U] = 0x74732f77U;
-    __Vtemp6[3U] = 0x65696768U;
-    __Vtemp6[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp6)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w00mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp7[0U] = 0x2e6d656dU;
-    __Vtemp7[1U] = 0x30315f30U;
-    __Vtemp7[2U] = 0x74732f77U;
-    __Vtemp7[3U] = 0x65696768U;
-    __Vtemp7[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp7)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w01mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp8[0U] = 0x2e6d656dU;
-    __Vtemp8[1U] = 0x30325f30U;
-    __Vtemp8[2U] = 0x74732f77U;
-    __Vtemp8[3U] = 0x65696768U;
-    __Vtemp8[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp8)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w02mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp9[0U] = 0x2e6d656dU;
-    __Vtemp9[1U] = 0x30335f30U;
-    __Vtemp9[2U] = 0x74732f77U;
-    __Vtemp9[3U] = 0x65696768U;
-    __Vtemp9[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp9)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w03mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp10[0U] = 0x2e6d656dU;
-    __Vtemp10[1U] = 0x30345f30U;
-    __Vtemp10[2U] = 0x74732f77U;
-    __Vtemp10[3U] = 0x65696768U;
-    __Vtemp10[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp10)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w04mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp11[0U] = 0x2e6d656dU;
-    __Vtemp11[1U] = 0x30355f30U;
-    __Vtemp11[2U] = 0x74732f77U;
-    __Vtemp11[3U] = 0x65696768U;
-    __Vtemp11[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp11)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w05mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp12[0U] = 0x2e6d656dU;
-    __Vtemp12[1U] = 0x30365f30U;
-    __Vtemp12[2U] = 0x74732f77U;
-    __Vtemp12[3U] = 0x65696768U;
-    __Vtemp12[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp12)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w06mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp13[0U] = 0x2e6d656dU;
-    __Vtemp13[1U] = 0x30375f30U;
-    __Vtemp13[2U] = 0x74732f77U;
-    __Vtemp13[3U] = 0x65696768U;
-    __Vtemp13[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp13)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w07mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp14[0U] = 0x2e6d656dU;
-    __Vtemp14[1U] = 0x30385f30U;
-    __Vtemp14[2U] = 0x74732f77U;
-    __Vtemp14[3U] = 0x65696768U;
-    __Vtemp14[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp14)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w08mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp15[0U] = 0x2e6d656dU;
-    __Vtemp15[1U] = 0x30395f30U;
-    __Vtemp15[2U] = 0x74732f77U;
-    __Vtemp15[3U] = 0x65696768U;
-    __Vtemp15[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp15)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w09mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp16[0U] = 0x2e6d656dU;
-    __Vtemp16[1U] = 0x31305f30U;
-    __Vtemp16[2U] = 0x74732f77U;
-    __Vtemp16[3U] = 0x65696768U;
-    __Vtemp16[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp16)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w10mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp17[0U] = 0x2e6d656dU;
-    __Vtemp17[1U] = 0x31315f30U;
-    __Vtemp17[2U] = 0x74732f77U;
-    __Vtemp17[3U] = 0x65696768U;
-    __Vtemp17[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp17)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w11mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp18[0U] = 0x2e6d656dU;
-    __Vtemp18[1U] = 0x31325f30U;
-    __Vtemp18[2U] = 0x74732f77U;
-    __Vtemp18[3U] = 0x65696768U;
-    __Vtemp18[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp18)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w12mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp19[0U] = 0x2e6d656dU;
-    __Vtemp19[1U] = 0x31335f30U;
-    __Vtemp19[2U] = 0x74732f77U;
-    __Vtemp19[3U] = 0x65696768U;
-    __Vtemp19[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp19)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w13mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp20[0U] = 0x2e6d656dU;
-    __Vtemp20[1U] = 0x31345f30U;
-    __Vtemp20[2U] = 0x74732f77U;
-    __Vtemp20[3U] = 0x65696768U;
-    __Vtemp20[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp20)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w14mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp21[0U] = 0x2e6d656dU;
-    __Vtemp21[1U] = 0x31355f30U;
-    __Vtemp21[2U] = 0x74732f77U;
-    __Vtemp21[3U] = 0x65696768U;
-    __Vtemp21[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp21)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w15mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp22[0U] = 0x2e6d656dU;
-    __Vtemp22[1U] = 0x31365f30U;
-    __Vtemp22[2U] = 0x74732f77U;
-    __Vtemp22[3U] = 0x65696768U;
-    __Vtemp22[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp22)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w16mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp23[0U] = 0x2e6d656dU;
-    __Vtemp23[1U] = 0x31375f30U;
-    __Vtemp23[2U] = 0x74732f77U;
-    __Vtemp23[3U] = 0x65696768U;
-    __Vtemp23[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp23)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w17mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp24[0U] = 0x2e6d656dU;
-    __Vtemp24[1U] = 0x31385f30U;
-    __Vtemp24[2U] = 0x74732f77U;
-    __Vtemp24[3U] = 0x65696768U;
-    __Vtemp24[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp24)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w18mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp25[0U] = 0x2e6d656dU;
-    __Vtemp25[1U] = 0x31395f30U;
-    __Vtemp25[2U] = 0x74732f77U;
-    __Vtemp25[3U] = 0x65696768U;
-    __Vtemp25[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp25)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w19mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp26[0U] = 0x2e6d656dU;
-    __Vtemp26[1U] = 0x32305f30U;
-    __Vtemp26[2U] = 0x74732f77U;
-    __Vtemp26[3U] = 0x65696768U;
-    __Vtemp26[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp26)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w20mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp27[0U] = 0x2e6d656dU;
-    __Vtemp27[1U] = 0x32315f30U;
-    __Vtemp27[2U] = 0x74732f77U;
-    __Vtemp27[3U] = 0x65696768U;
-    __Vtemp27[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp27)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w21mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp28[0U] = 0x2e6d656dU;
-    __Vtemp28[1U] = 0x32325f30U;
-    __Vtemp28[2U] = 0x74732f77U;
-    __Vtemp28[3U] = 0x65696768U;
-    __Vtemp28[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp28)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w22mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp29[0U] = 0x2e6d656dU;
-    __Vtemp29[1U] = 0x32335f30U;
-    __Vtemp29[2U] = 0x74732f77U;
-    __Vtemp29[3U] = 0x65696768U;
-    __Vtemp29[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp29)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w23mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp30[0U] = 0x2e6d656dU;
-    __Vtemp30[1U] = 0x32345f30U;
-    __Vtemp30[2U] = 0x74732f77U;
-    __Vtemp30[3U] = 0x65696768U;
-    __Vtemp30[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp30)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w24mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp31[0U] = 0x2e6d656dU;
-    __Vtemp31[1U] = 0x32355f30U;
-    __Vtemp31[2U] = 0x74732f77U;
-    __Vtemp31[3U] = 0x65696768U;
-    __Vtemp31[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp31)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w25mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp32[0U] = 0x2e6d656dU;
-    __Vtemp32[1U] = 0x32365f30U;
-    __Vtemp32[2U] = 0x74732f77U;
-    __Vtemp32[3U] = 0x65696768U;
-    __Vtemp32[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp32)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w26mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp33[0U] = 0x2e6d656dU;
-    __Vtemp33[1U] = 0x32375f30U;
-    __Vtemp33[2U] = 0x74732f77U;
-    __Vtemp33[3U] = 0x65696768U;
-    __Vtemp33[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp33)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w27mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp34[0U] = 0x2e6d656dU;
-    __Vtemp34[1U] = 0x32385f30U;
-    __Vtemp34[2U] = 0x74732f77U;
-    __Vtemp34[3U] = 0x65696768U;
-    __Vtemp34[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp34)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w28mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp35[0U] = 0x2e6d656dU;
-    __Vtemp35[1U] = 0x32395f30U;
-    __Vtemp35[2U] = 0x74732f77U;
-    __Vtemp35[3U] = 0x65696768U;
-    __Vtemp35[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp35)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w29mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp36[0U] = 0x2e6d656dU;
-    __Vtemp36[1U] = 0x33305f30U;
-    __Vtemp36[2U] = 0x74732f77U;
-    __Vtemp36[3U] = 0x65696768U;
-    __Vtemp36[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp36)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w30mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp37[0U] = 0x2e6d656dU;
-    __Vtemp37[1U] = 0x33315f30U;
-    __Vtemp37[2U] = 0x74732f77U;
-    __Vtemp37[3U] = 0x65696768U;
-    __Vtemp37[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp37)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w31mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp38[0U] = 0x2e6d656dU;
-    __Vtemp38[1U] = 0x30305f31U;
-    __Vtemp38[2U] = 0x74732f77U;
-    __Vtemp38[3U] = 0x65696768U;
-    __Vtemp38[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp38)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w32mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp39[0U] = 0x2e6d656dU;
-    __Vtemp39[1U] = 0x30315f31U;
-    __Vtemp39[2U] = 0x74732f77U;
-    __Vtemp39[3U] = 0x65696768U;
-    __Vtemp39[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp39)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w33mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp40[0U] = 0x2e6d656dU;
-    __Vtemp40[1U] = 0x30325f31U;
-    __Vtemp40[2U] = 0x74732f77U;
-    __Vtemp40[3U] = 0x65696768U;
-    __Vtemp40[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp40)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w34mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp41[0U] = 0x2e6d656dU;
-    __Vtemp41[1U] = 0x30335f31U;
-    __Vtemp41[2U] = 0x74732f77U;
-    __Vtemp41[3U] = 0x65696768U;
-    __Vtemp41[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp41)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w35mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp42[0U] = 0x2e6d656dU;
-    __Vtemp42[1U] = 0x30345f31U;
-    __Vtemp42[2U] = 0x74732f77U;
-    __Vtemp42[3U] = 0x65696768U;
-    __Vtemp42[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp42)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w36mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp43[0U] = 0x2e6d656dU;
-    __Vtemp43[1U] = 0x30355f31U;
-    __Vtemp43[2U] = 0x74732f77U;
-    __Vtemp43[3U] = 0x65696768U;
-    __Vtemp43[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp43)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w37mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp44[0U] = 0x2e6d656dU;
-    __Vtemp44[1U] = 0x30365f31U;
-    __Vtemp44[2U] = 0x74732f77U;
-    __Vtemp44[3U] = 0x65696768U;
-    __Vtemp44[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp44)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w38mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp45[0U] = 0x2e6d656dU;
-    __Vtemp45[1U] = 0x30375f31U;
-    __Vtemp45[2U] = 0x74732f77U;
-    __Vtemp45[3U] = 0x65696768U;
-    __Vtemp45[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp45)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w39mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp46[0U] = 0x2e6d656dU;
-    __Vtemp46[1U] = 0x30385f31U;
-    __Vtemp46[2U] = 0x74732f77U;
-    __Vtemp46[3U] = 0x65696768U;
-    __Vtemp46[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp46)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w40mem
-                 , 0, ~VL_ULL(0));
-    __Vtemp47[0U] = 0x2e6d656dU;
-    __Vtemp47[1U] = 0x30395f31U;
-    __Vtemp47[2U] = 0x74732f77U;
-    __Vtemp47[3U] = 0x65696768U;
-    __Vtemp47[4U] = 0x77U;
-    VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp47)
-                 , vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w41mem
-                 , 0, ~VL_ULL(0));
-}
-
-void Vpicorv32_wrapper_axi4_mem_periph::_settle__TOP__picorv32_wrapper__mem__5(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_settle__TOP__picorv32_wrapper__mem__5\n"); );
-    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Variables
-    IData/*31:0*/ __Vilp;
-    // Body
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p0 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac0__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p1 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac1__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p2 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac2__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p3 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac3__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p4 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac4__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p5 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac5__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p6 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac6__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p7 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac7__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p8 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac8__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p9 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac9__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p10 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac10__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p11 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac11__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p12 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac12__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p13 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac13__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p14 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac14__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p15 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac15__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p16 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac16__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p17 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac17__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p18 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac18__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p19 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac19__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p20 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac20__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p21 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac21__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p22 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac22__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p23 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac23__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p24 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac24__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p25 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac25__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p26 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac26__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p27 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac27__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p28 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac28__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p29 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac29__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p30 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac30__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__p31 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic1__DOT__mac31__DOT__d);
-    __Vilp = 0U;
-    while ((__Vilp <= 0x310U)) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__in_image[__Vilp] 
-            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__image
-            [__Vilp];
-        __Vilp = ((IData)(1U) + __Vilp);
-    }
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result0 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result1 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready 
-        = (1U & (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-                   ? 1U : 0U) & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                                  ? 1U : 0U)));
-    vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start 
-        = (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-             ? 1U : 0U) & (0U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2));
-}
-
-VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__6(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__6\n"); );
-    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Body
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
-            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
-                       ? 4U : 0U) >> 2U));
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 1U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 1U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 1U;
-    }
-    if (((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid)) 
-         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en))) {
-        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-            VL_WRITEF("RD: ADDR=%08x DATA=%08x%s\n",
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr,
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.memory
-                      [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                    >> 2U))],40,((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn)
-                                                  ? VL_ULL(0x20494e534e)
-                                                  : VL_ULL(0)));
-        }
-        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                = vlSymsp->TOP__picorv32_wrapper__mem.memory
-                [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                              >> 2U))];
-            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-        } else {
-            if (((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
-                 & (0x31000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                    = vlSymsp->TOP__picorv32_wrapper__mem.xmem
-                    [(0x3ffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                 - (IData)(0x30000000U)) 
-                                << 2U))];
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-            } else {
-                if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
-                     & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                        = vlSymsp->TOP__picorv32_wrapper__mem.wkmem
-                        [(0x7ffffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                       - (IData)(0x40000000U)) 
-                                      >> 2U))];
-                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                } else {
-                    if ((0x32000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready;
-                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                    } else {
-                        if ((0x33000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
-                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                        } else {
-                            if ((0x33000004U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                            } else {
-                                if ((0x33000008U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                } else {
-                                    if ((0x3300000cU 
-                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                    } else {
-                                        if ((0x33000010U 
-                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                        } else {
-                                            if ((0x33000014U 
-                                                 == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                            } else {
-                                                if (
-                                                    (0x33000018U 
-                                                     == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                } else {
-                                                    if (
-                                                        (0x3300001cU 
-                                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                    } else {
-                                                        if (
-                                                            (0x33000020U 
-                                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                        } else {
-                                                            if (VL_LIKELY(
-                                                                          (0x33000024U 
-                                                                           == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                            } else {
-                                                                VL_WRITEF("OUT-OF-BOUNDS MEMORY READ FROM %08x\n",
-                                                                          32,
-                                                                          vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr);
-                                                                VL_FINISH_MT("axi4_mem_periph.v", 194, "");
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    if ((((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid)) 
-          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en)) 
-         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en))) {
-        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-            VL_WRITEF("WR: ADDR=%08x DATA=%08x STRB=%04b\n",
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr,
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata,
-                      4,(IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb));
-        }
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
-        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v0 
-                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v0 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v0 = 0U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v0 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v1 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 8U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v1 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v1 = 8U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v1 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v2 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 0x10U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v2 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v2 = 0x10U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v2 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v3 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 0x18U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v3 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v3 = 0x18U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v3 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-        } else {
-            if ((0x10000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-                if (VL_LIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-                    if (((0x20U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata) 
-                         & (0x80U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata))) {
-                        VL_WRITEF("OUT: '%c'\n",8,(0xffU 
-                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
-                    } else {
-                        VL_WRITEF("OUT: %3#\n",32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                    }
-                } else {
-                    VL_WRITEF("%c",8,(0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
-                }
-            } else {
-                if ((0x20000000U != vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-                    if (VL_UNLIKELY(((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                                     & (0x31000000U 
-                                        > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
-                        VL_WRITEF("Weight memory is read-only!\n");
-                    } else {
-                        if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                             & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
-                            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v0 
-                                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v0 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v0 = 0U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v0 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v1 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 8U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v1 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v1 = 8U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v1 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v2 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 0x10U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v2 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v2 = 0x10U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v2 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v3 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 0x18U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v3 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v3 = 0x18U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v3 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                        } else {
-                            if (VL_UNLIKELY((0x31000000U 
-                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset 
-                                    = (1U & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                                VL_WRITEF("Write %3# to the reset signal\n",
-                                          32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                            } else {
-                                if (VL_LIKELY(((0x34000000U 
-                                                <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                                               & (0x35000000U 
-                                                  > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1 
-                                        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata;
-                                    if ((0x310U >= 
-                                         (0x3ffU & 
-                                          ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                            - (IData)(0x34000000U)) 
-                                           << 2U)))) {
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__image__v0 
-                                            = vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v0 = 1U;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__image__v0 
-                                            = (0x3ffU 
-                                               & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                   - (IData)(0x34000000U)) 
-                                                  << 2U));
-                                    }
-                                } else {
-                                    VL_WRITEF("OUT-OF-BOUNDS MEMORY WRITE TO %08x\n",
-                                              32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr);
-                                    VL_FINISH_MT("axi4_mem_periph.v", 241, "");
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 1U;
-    }
-}
-
-VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__7(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__7\n"); );
-    Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
-    // Body
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 0U;
-    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 0U;
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid) 
-         & ((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_valid) 
-            & (~ (IData)((0U != (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb))))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 0U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid) 
-         & ((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_valid) 
-            & (0U != (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 0U;
-    }
-    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
-          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_arready)) 
-         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr)))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
-            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
-                       ? 4U : 0U) >> 2U));
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
-    }
-    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
-          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_awready)) 
-         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr)))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
-    }
-    if ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
-          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_wready)) 
-         & (~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata)))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_arvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_raddr))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn 
-            = (1U & (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_instr)
-                       ? 4U : 0U) >> 2U));
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_arready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_raddr = 1U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_awvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_waddr))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_addr;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_awready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_waddr = 1U;
-    }
-    if (((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__mem_axi_wvalid) 
-         & (~ ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en) 
-               | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__fast_wdata))))) {
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wdata;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb 
-            = vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_wstrb;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_wready = 1U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__fast_wdata = 1U;
-    }
-    if (((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid)) 
-         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en))) {
-        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-            VL_WRITEF("RD: ADDR=%08x DATA=%08x%s\n",
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr,
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.memory
-                      [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                    >> 2U))],40,((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_rinsn)
-                                                  ? VL_ULL(0x20494e534e)
-                                                  : VL_ULL(0)));
-        }
-        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                = vlSymsp->TOP__picorv32_wrapper__mem.memory
-                [(0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                              >> 2U))];
-            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-        } else {
-            if (((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
-                 & (0x31000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                    = vlSymsp->TOP__picorv32_wrapper__mem.xmem
-                    [(0x3ffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                 - (IData)(0x30000000U)) 
-                                << 2U))];
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-            } else {
-                if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr) 
-                     & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                        = vlSymsp->TOP__picorv32_wrapper__mem.wkmem
-                        [(0x7ffffU & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr 
-                                       - (IData)(0x40000000U)) 
-                                      >> 2U))];
-                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                } else {
-                    if ((0x32000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                            = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready;
-                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                    } else {
-                        if ((0x33000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
-                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                        } else {
-                            if ((0x33000004U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                            } else {
-                                if ((0x33000008U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                } else {
-                                    if ((0x3300000cU 
-                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                    } else {
-                                        if ((0x33000010U 
-                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
-                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                        } else {
-                                            if ((0x33000014U 
-                                                 == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
-                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                            } else {
-                                                if (
-                                                    (0x33000018U 
-                                                     == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
-                                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                } else {
-                                                    if (
-                                                        (0x3300001cU 
-                                                         == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                            = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
-                                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                    } else {
-                                                        if (
-                                                            (0x33000020U 
-                                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr)) {
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                                = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
-                                                            vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                        } else {
-                                                            if (VL_LIKELY(
-                                                                          (0x33000024U 
-                                                                           == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr))) {
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr_en = 0U;
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata 
-                                                                    = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
-                                                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rvalid = 1U;
-                                                            } else {
-                                                                VL_WRITEF("OUT-OF-BOUNDS MEMORY READ FROM %08x\n",
-                                                                          32,
-                                                                          vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_raddr);
-                                                                VL_FINISH_MT("axi4_mem_periph.v", 194, "");
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    if ((((~ (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid)) 
-          & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en)) 
-         & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en))) {
-        if (VL_UNLIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-            VL_WRITEF("WR: ADDR=%08x DATA=%08x STRB=%04b\n",
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr,
-                      32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata,
-                      4,(IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb));
-        }
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr_en = 0U;
-        vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata_en = 0U;
-        if ((0x200000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v4 
-                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v4 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v4 = 0U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v4 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v5 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 8U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v5 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v5 = 8U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v5 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v6 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 0x10U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v6 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v6 = 0x10U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v6 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__memory__v7 
-                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                >> 0x18U));
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__memory__v7 = 1U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__memory__v7 = 0x18U;
-                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__memory__v7 
-                    = (0x7ffffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                   >> 2U));
-            }
-        } else {
-            if ((0x10000000U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-                if (VL_LIKELY(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__verbose)) {
-                    if (((0x20U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata) 
-                         & (0x80U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata))) {
-                        VL_WRITEF("OUT: '%c'\n",8,(0xffU 
-                                                   & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
-                    } else {
-                        VL_WRITEF("OUT: %3#\n",32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                    }
-                } else {
-                    VL_WRITEF("%c",8,(0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata));
-                }
-            } else {
-                if ((0x20000000U != vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)) {
-                    if (VL_UNLIKELY(((0x30000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                                     & (0x31000000U 
-                                        > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
-                        VL_WRITEF("Weight memory is read-only!\n");
-                    } else {
-                        if (((0x40000000U <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                             & (0x42000000U > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
-                            if ((1U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v4 
-                                    = (0xffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v4 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v4 = 0U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v4 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((2U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v5 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 8U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v5 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v5 = 8U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v5 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((4U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v6 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 0x10U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v6 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v6 = 0x10U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v6 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                            if ((8U & (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wstrb))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__wkmem__v7 
-                                    = (0xffU & (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata 
-                                                >> 0x18U));
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__wkmem__v7 = 1U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvlsb__wkmem__v7 = 0x18U;
-                                vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__wkmem__v7 
-                                    = (0x7ffffU & (
-                                                   (vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                    - (IData)(0x40000000U)) 
-                                                   >> 2U));
-                            }
-                        } else {
-                            if (VL_UNLIKELY((0x31000000U 
-                                             == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr))) {
-                                vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset 
-                                    = (1U & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                                VL_WRITEF("Write %3# to the reset signal\n",
-                                          32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata);
-                            } else {
-                                if (VL_LIKELY(((0x34000000U 
-                                                <= vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr) 
-                                               & (0x35000000U 
-                                                  > vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr)))) {
-                                    vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1 
-                                        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_wdata;
-                                    if ((0x310U >= 
-                                         (0x3ffU & 
-                                          ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                            - (IData)(0x34000000U)) 
-                                           << 2U)))) {
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__image__v1 
-                                            = vlSymsp->TOP__picorv32_wrapper__mem.__Vlvbound1;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvset__image__v1 = 1U;
-                                        vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__image__v1 
-                                            = (0x3ffU 
-                                               & ((vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr 
-                                                   - (IData)(0x34000000U)) 
-                                                  << 2U));
-                                    }
-                                } else {
-                                    VL_WRITEF("OUT-OF-BOUNDS MEMORY WRITE TO %08x\n",
-                                              32,vlSymsp->TOP__picorv32_wrapper__mem.__PVT__latched_waddr);
-                                    VL_FINISH_MT("axi4_mem_periph.v", 241, "");
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_bvalid = 1U;
-    }
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result0)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result0) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result1)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result1) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_1)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_2)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_3)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_4)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_5)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_6)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_7)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_8)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start)
-            ? VL_ULL(0) : (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                             ? 1U : 0U) ? VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9)
-                            : (VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9) 
-                               + VL_MULS_QQQ(64,64,64, 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out), 
-                                             VL_EXTENDS_QI(64,32, vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_9)))));
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__relu_out 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__relu_out;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result0 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac0__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result1 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac1__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_1 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w33mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result2 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac2__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_2 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w34mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result3 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac3__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_3 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w35mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result4 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac4__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_4 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w36mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result5 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac5__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_5 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w37mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result6 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac6__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_6 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w38mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result7 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac7__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_7 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w39mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result8 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac8__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_8 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w40mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__result9 
-        = (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__systolic2__DOT__mac9__DOT__d);
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_9 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w41mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__wbmem__DOT__w32mem
-        [(0x3ffU & vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2)];
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2 
-        = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter2;
-    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__ready 
-        = (1U & (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-                   ? 1U : 0U) & ((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w2_0)
-                                  ? 1U : 0U)));
-    vlSymsp->TOP__picorv32_wrapper__mem.accel__DOT____Vcellinp__systolic2__start 
-        = (((0x7fffffffU == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__w1_0)
-             ? 1U : 0U) & (0U == vlSymsp->TOP__picorv32_wrapper__mem.__PVT__accel__DOT__counter2));
+        = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__accel__DOT__counter1;
 }
 
 VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wrapper__mem__8(Vpicorv32_wrapper__Syms* __restrict vlSymsp) {
@@ -2262,6 +2258,8 @@ VL_INLINE_OPT void Vpicorv32_wrapper_axi4_mem_periph::_sequent__TOP__picorv32_wr
         vlSymsp->TOP__picorv32_wrapper__mem.__PVT__image[vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvdim0__image__v1] 
             = vlSymsp->TOP__picorv32_wrapper__mem.__Vdlyvval__image__v1;
     }
+    vlSymsp->TOP__picorv32_wrapper__mem.__PVT__reset 
+        = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__reset;
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rdata 
         = vlSymsp->TOP__picorv32_wrapper__mem.__Vdly__mem_axi_rdata;
     vlSymsp->TOP__picorv32_wrapper__mem.__PVT__in_image[0U] 
@@ -4649,8 +4647,6 @@ void Vpicorv32_wrapper_axi4_mem_periph::_ctor_var_reset() {
     }}
     __PVT__reset = VL_RAND_RESET_I(1);
     __PVT__ready = VL_RAND_RESET_I(1);
-    __PVT__result0 = VL_RAND_RESET_I(32);
-    __PVT__result1 = VL_RAND_RESET_I(32);
     __PVT__result2 = VL_RAND_RESET_I(32);
     __PVT__result3 = VL_RAND_RESET_I(32);
     __PVT__result4 = VL_RAND_RESET_I(32);
@@ -4758,6 +4754,7 @@ void Vpicorv32_wrapper_axi4_mem_periph::_ctor_var_reset() {
     __PVT__accel__DOT__p30 = VL_RAND_RESET_I(32);
     __PVT__accel__DOT__p31 = VL_RAND_RESET_I(32);
     __PVT__accel__DOT__relu_out = VL_RAND_RESET_I(32);
+    __PVT__accel__DOT__invoked = VL_RAND_RESET_I(1);
     __PVT__accel__DOT__counter1 = VL_RAND_RESET_I(32);
     __PVT__accel__DOT__counter2 = VL_RAND_RESET_I(32);
     accel__DOT____Vcellinp__systolic2__start = VL_RAND_RESET_I(1);
@@ -4794,6 +4791,8 @@ void Vpicorv32_wrapper_axi4_mem_periph::_ctor_var_reset() {
     __PVT__accel__DOT__systolic1__DOT__mac29__DOT__d = VL_RAND_RESET_Q(64);
     __PVT__accel__DOT__systolic1__DOT__mac30__DOT__d = VL_RAND_RESET_Q(64);
     __PVT__accel__DOT__systolic1__DOT__mac31__DOT__d = VL_RAND_RESET_Q(64);
+    __PVT__accel__DOT__systolic2__DOT__p0 = VL_RAND_RESET_I(32);
+    __PVT__accel__DOT__systolic2__DOT__p1 = VL_RAND_RESET_I(32);
     __PVT__accel__DOT__systolic2__DOT__mac0__DOT__d = VL_RAND_RESET_Q(64);
     __PVT__accel__DOT__systolic2__DOT__mac1__DOT__d = VL_RAND_RESET_Q(64);
     __PVT__accel__DOT__systolic2__DOT__mac2__DOT__d = VL_RAND_RESET_Q(64);
@@ -4970,6 +4969,7 @@ void Vpicorv32_wrapper_axi4_mem_periph::_ctor_var_reset() {
     __Vdlyvlsb__wkmem__v3 = 0;
     __Vdlyvval__wkmem__v3 = VL_RAND_RESET_I(8);
     __Vdlyvset__wkmem__v3 = 0;
+    __Vdly__reset = VL_RAND_RESET_I(1);
     __Vdlyvdim0__image__v0 = 0;
     __Vdlyvval__image__v0 = VL_RAND_RESET_I(32);
     __Vdlyvset__image__v0 = 0;
@@ -5009,6 +5009,6 @@ void Vpicorv32_wrapper_axi4_mem_periph::_ctor_var_reset() {
     __Vdlyvdim0__image__v1 = 0;
     __Vdlyvval__image__v1 = VL_RAND_RESET_I(32);
     __Vdlyvset__image__v1 = 0;
-    __Vdly__accel__DOT__relu_out = VL_RAND_RESET_I(32);
+    __Vdly__accel__DOT__counter1 = VL_RAND_RESET_I(32);
     __Vdly__accel__DOT__counter2 = VL_RAND_RESET_I(32);
 }

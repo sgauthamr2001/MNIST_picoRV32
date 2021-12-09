@@ -152,17 +152,17 @@ Linker script and memory map
                 0x000000000000077e                print_str
                 0x0000000000000790                print_dec
                 0x00000000000007e0                print_hex
- .text          0x0000000000000806       0xc2 firmware/hello.o
+ .text          0x0000000000000806       0xc0 firmware/hello.o
                 0x0000000000000806                IMG_Write
                 0x0000000000000812                IMG_StartAndWait
                 0x0000000000000850                hello
- .text          0x00000000000008c8      0x184 firmware/sieve.o
-                0x0000000000000962                sieve
- .text          0x0000000000000a4c      0x2d0 firmware/multest.o
-                0x0000000000000a6a                multest
- .text          0x0000000000000d1c      0x11c firmware/stats.o
-                0x0000000000000db0                stats
- *fill*         0x0000000000000e38        0x0 
+ .text          0x00000000000008c6      0x184 firmware/sieve.o
+                0x0000000000000960                sieve
+ .text          0x0000000000000a4a      0x2d0 firmware/multest.o
+                0x0000000000000a68                multest
+ .text          0x0000000000000d1a      0x11c firmware/stats.o
+                0x0000000000000dae                stats
+ *fill*         0x0000000000000e36        0x2 
  .text          0x0000000000000e38      0x540 tests/xor.o
                 0x0000000000000e38                xor
  .text          0x0000000000001378      0x544 tests/or.o
@@ -191,6 +191,7 @@ Linker script and memory map
                 0x0000000000003f50                lw
  .text          0x000000000000425c      0x15c tests/div.o
                 0x000000000000425c                div
+ *fill*         0x00000000000043b8        0x0 
  .text          0x00000000000043b8       0xcc tests/auipc.o
                 0x00000000000043b8                auipc
  .text          0x0000000000004484      0x474 tests/sb.o

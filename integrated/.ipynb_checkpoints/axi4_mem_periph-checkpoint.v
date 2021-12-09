@@ -124,7 +124,7 @@ module axi4_mem_periph #(
 		if ((latched_raddr >= 32'h3000_0000) && (latched_raddr < 32'h3100_0000)) begin
 			// validation data memory
             // $display("Data %08x: %08x", latched_raddr, xmem[(latched_raddr-'h3000_0000) >> 2]);
-            mem_axi_rdata <= xmem[(latched_raddr-'h3000_0000) << 2];
+            mem_axi_rdata <= xmem[(latched_raddr-'h3000_0000) >> 2];
 			mem_axi_rvalid <= 1;
 			latched_raddr_en = 0; // Why?
 		end else
@@ -235,7 +235,7 @@ module axi4_mem_periph #(
 
         else
         if ((latched_waddr >= 32'h3400_0000) && (latched_waddr < 32'h3500_0000)) begin
-            image[(latched_waddr - 'h3400_0000)<<2] <= latched_wdata;
+            image[(latched_waddr - 'h3400_0000)>>2] <= latched_wdata;
 		end else begin
 			$display("OUT-OF-BOUNDS MEMORY WRITE TO %08x", latched_waddr);
             $finish;

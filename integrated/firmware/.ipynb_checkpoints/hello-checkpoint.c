@@ -86,9 +86,9 @@ void hello(void)
 	print_str(" to get ");
 	print_dec(a*b);
 	print_str("\n\nAnd now in hardware: \n");*/
-    for(int i = 0; i<784; i++)
+    for(int i = 0; i<785; i++)
     {
-        IMG_Write((*(int *)(IMG_BASE+(i*4))),i);
+        IMG_Write((*(int *)(IMG_BASE+(4*i))),i);
     }
     
 	IMG_StartAndWait();
@@ -98,7 +98,7 @@ void hello(void)
         print_str("class - ");
         print_dec(i);
         print_str(":");
-        print_hex((*(int *)(IMG_RES+(4*i))),8);
+        print_dec((*(int *)(IMG_RES+(4*i))));             // change this to print_hex, add 8 as second argument later
         print_str("\n");
 
     }

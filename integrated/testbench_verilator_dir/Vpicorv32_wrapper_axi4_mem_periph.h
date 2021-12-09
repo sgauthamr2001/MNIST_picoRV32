@@ -54,9 +54,8 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         CData/*0:0*/ __PVT__fast_wdata;
         CData/*3:0*/ __PVT__latched_wstrb;
         CData/*0:0*/ __PVT__latched_rinsn;
+        CData/*0:0*/ __PVT__accel__DOT__invoked;
         WData/*25119:0*/ __PVT__in_image[785];
-        IData/*31:0*/ __PVT__result0;
-        IData/*31:0*/ __PVT__result1;
         IData/*31:0*/ __PVT__result2;
         IData/*31:0*/ __PVT__result3;
         IData/*31:0*/ __PVT__result4;
@@ -107,9 +106,9 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         IData/*31:0*/ __PVT__accel__DOT__w2_2;
         IData/*31:0*/ __PVT__accel__DOT__w2_3;
         IData/*31:0*/ __PVT__accel__DOT__w2_4;
+        IData/*31:0*/ __PVT__accel__DOT__w2_5;
     };
     struct {
-        IData/*31:0*/ __PVT__accel__DOT__w2_5;
         IData/*31:0*/ __PVT__accel__DOT__w2_6;
         IData/*31:0*/ __PVT__accel__DOT__w2_7;
         IData/*31:0*/ __PVT__accel__DOT__w2_8;
@@ -150,6 +149,8 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         IData/*31:0*/ __PVT__accel__DOT__counter1;
         IData/*31:0*/ __PVT__accel__DOT__counter2;
         IData/*31:0*/ __PVT__accel__DOT__systolic1__DOT__im;
+        IData/*31:0*/ __PVT__accel__DOT__systolic2__DOT__p0;
+        IData/*31:0*/ __PVT__accel__DOT__systolic2__DOT__p1;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac0__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac1__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac2__DOT__d;
@@ -172,9 +173,9 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac19__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac20__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac21__DOT__d;
-        QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac22__DOT__d;
     };
     struct {
+        QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac22__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac23__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac24__DOT__d;
         QData/*63:0*/ __PVT__accel__DOT__systolic1__DOT__mac25__DOT__d;
@@ -238,9 +239,9 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w37mem[1024];
         IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w38mem[1024];
         IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w39mem[1024];
-        IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w40mem[1024];
     };
     struct {
+        IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w40mem[1024];
         IData/*31:0*/ __PVT__accel__DOT__wbmem__DOT__w41mem[1024];
     };
     
@@ -279,6 +280,7 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         CData/*4:0*/ __Vdlyvlsb__wkmem__v3;
         CData/*7:0*/ __Vdlyvval__wkmem__v3;
         CData/*0:0*/ __Vdlyvset__wkmem__v3;
+        CData/*0:0*/ __Vdly__reset;
         CData/*0:0*/ __Vdlyvset__image__v0;
         CData/*0:0*/ __Vdly__mem_axi_bvalid;
         CData/*4:0*/ __Vdlyvlsb__memory__v4;
@@ -310,9 +312,9 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         SData/*9:0*/ __Vdlyvdim0__image__v1;
         IData/*31:0*/ __Vlvbound1;
         IData/*31:0*/ __Vdly__mem_axi_rdata;
-        IData/*18:0*/ __Vdlyvdim0__memory__v0;
     };
     struct {
+        IData/*18:0*/ __Vdlyvdim0__memory__v0;
         IData/*18:0*/ __Vdlyvdim0__memory__v1;
         IData/*18:0*/ __Vdlyvdim0__memory__v2;
         IData/*18:0*/ __Vdlyvdim0__memory__v3;
@@ -330,7 +332,7 @@ VL_MODULE(Vpicorv32_wrapper_axi4_mem_periph) {
         IData/*18:0*/ __Vdlyvdim0__wkmem__v6;
         IData/*18:0*/ __Vdlyvdim0__wkmem__v7;
         IData/*31:0*/ __Vdlyvval__image__v1;
-        IData/*31:0*/ __Vdly__accel__DOT__relu_out;
+        IData/*31:0*/ __Vdly__accel__DOT__counter1;
         IData/*31:0*/ __Vdly__accel__DOT__counter2;
     };
     

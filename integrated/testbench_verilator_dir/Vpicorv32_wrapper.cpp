@@ -143,9 +143,9 @@ void Vpicorv32_wrapper::_eval_initial(Vpicorv32_wrapper__Syms* __restrict vlSyms
     Vpicorv32_wrapper* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->__Vclklast__TOP__clk = vlTOPp->clk;
-    vlSymsp->TOP__picorv32_wrapper._initial__TOP__picorv32_wrapper__2(vlSymsp);
-    vlTOPp->__Vm_traceActivity = (1U | vlTOPp->__Vm_traceActivity);
     vlSymsp->TOP__picorv32_wrapper__mem._initial__TOP__picorv32_wrapper__mem__4(vlSymsp);
+    vlTOPp->__Vm_traceActivity = (1U | vlTOPp->__Vm_traceActivity);
+    vlSymsp->TOP__picorv32_wrapper._initial__TOP__picorv32_wrapper__2(vlSymsp);
 }
 
 void Vpicorv32_wrapper::final() {

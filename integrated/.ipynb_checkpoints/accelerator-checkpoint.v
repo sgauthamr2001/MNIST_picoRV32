@@ -6,10 +6,9 @@
 
 module accelerator (
 		   input 		 clk, reset,
-    input [(784*32)-1:0]  in_image,                                  // Integer input corresponding to the image
+    input [(785*32)-1:0]  in_image,                                  // Integer input corresponding to the image
     
-           output                ready,
-//		   output reg [31:0]         result;                                 // Output integers for the result
+    output                ready,
     output [31:0]         result0,                                 // Output integers for the result
     output [31:0]         result1,                                 // Output integers for the result
     output [31:0]         result2,                                 // Output integers for the result
@@ -26,7 +25,7 @@ module accelerator (
 ) ;
     reg [31:0] image;
     
-    wire [31:0]   shifted_image;
+    wire [(785*32)-1:0]   shifted_image;
 	wire [31:0]   w1_0;
 	wire [31:0]   w1_1;
 	wire [31:0]   w1_2;
@@ -106,8 +105,15 @@ module accelerator (
 
 	wire [31:0]   relu_out;
     
-/*    
-	wire [31:0]   result0;
+    reg           invoked;
+    
+    initial invoked <= 0;
+    always @(posedge clk) begin
+        if (reset)  invoked <= 1;
+        else        invoked <= invoked;
+    end
+    
+/*	wire [31:0]   result0;
 	wire [31:0]   result1;
 	wire [31:0]   result2;
 	wire [31:0]   result3;
@@ -122,18 +128,21 @@ module accelerator (
 	wire [31:0]   counter1;
 	wire [31:0]   counter2;
 
+    assign        result0 = in_image[261*32 - 1 :260*32];   //debug
+    assign        result1 = in_image[262*32 - 1 :261*32];   //debug
+    
 	wire          start1;
 	wire          start2;
 
 	wire          stop1;
 	wire          stop2;
 
-    assign   ready = stop1 & stop2;
+    assign   ready = invoked & stop1 & stop2;
     
-    assign   shifted_image = in_image<<counter1;
+    assign   shifted_image = in_image>>counter1;
     
     always @(posedge clk) begin
-        if (counter1 < 785)        image <= shifted_image;  //[32*(counter1+1)-1:32*counter1];
+        if (counter1 < 785)        image <= shifted_image[31:0];  //[32*(counter1+1)-1:32*counter1];
         else                      image <= 0;
     end
     
@@ -259,8 +268,8 @@ module accelerator (
                          .w7(w2_7),
                          .w8(w2_8),
                          .w9(w2_9),
-                         .p0(result0), 
-                         .p1(result1), 
+                         .p0(),                            //debug
+                         .p1(),                            //debug
                          .p2(result2),
                          .p3(result3),
                          .p4(result4),

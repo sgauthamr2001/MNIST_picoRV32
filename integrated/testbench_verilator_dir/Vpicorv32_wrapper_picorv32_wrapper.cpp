@@ -929,7 +929,6 @@ void Vpicorv32_wrapper_picorv32_wrapper::_initial__TOP__picorv32_wrapper__2(Vpic
     // Variables
     WData/*95:0*/ __Vtemp4[3];
     // Body
-    vlSymsp->TOP__picorv32_wrapper.__PVT__count_cycle = 0U;
     __Vtemp4[0U] = 0x653d2573U;
     __Vtemp4[1U] = 0x6d776172U;
     __Vtemp4[2U] = 0x666972U;
@@ -971,6 +970,7 @@ void Vpicorv32_wrapper_picorv32_wrapper::_initial__TOP__picorv32_wrapper__2(Vpic
     VL_READMEM_N(true, 32, 524288, 0, VL_CVT_PACK_STR_NW(32, vlSymsp->TOP__picorv32_wrapper.__PVT__firmware_file)
                  , vlSymsp->TOP__picorv32_wrapper__mem.memory
                  , 0, ~VL_ULL(0));
+    vlSymsp->TOP__picorv32_wrapper.__PVT__count_cycle = 0U;
     vlSymsp->TOP__picorv32_wrapper.__PVT__irq = 0U;
 }
 
@@ -1799,6 +1799,9 @@ void Vpicorv32_wrapper_picorv32_wrapper::_settle__TOP__picorv32_wrapper__3(Vpico
     vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__alu_eq 
         = (vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__reg_op1 
            == vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__reg_op2);
+    vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_ready 
+        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid) 
+           | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid));
     vlSymsp->TOP__picorv32_wrapper.__PVT__irq = 0U;
     vlSymsp->TOP__picorv32_wrapper.__PVT__irq = ((0xffffffefU 
                                                   & vlSymsp->TOP__picorv32_wrapper.__PVT__irq) 
@@ -1814,9 +1817,6 @@ void Vpicorv32_wrapper_picorv32_wrapper::_settle__TOP__picorv32_wrapper__3(Vpico
                                                             (0xffffU 
                                                              == (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__count_cycle))) 
                                                     << 5U));
-    vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__mem_ready 
-        = ((IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_bvalid) 
-           | (IData)(vlSymsp->TOP__picorv32_wrapper__mem.__PVT__mem_axi_rvalid));
     vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__mem_la_firstword 
         = ((((IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__mem_do_prefetch) 
              | (IData)(vlSymsp->TOP__picorv32_wrapper.__PVT__uut__DOT__picorv32_core__DOT__mem_do_rinst)) 
