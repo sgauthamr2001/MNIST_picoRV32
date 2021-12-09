@@ -148,78 +148,92 @@ module wbmem (
 
     end
     
+    initial 
+        begin 
+            w2_0 <= 0; 
+            w2_1 <= 0; 
+            w2_2 <= 0; 
+            w2_3 <= 0; 
+            w2_4 <= 0; 
+            w2_5 <= 0;  
+            w2_6 <= 0; 
+            w2_7 <= 0; 
+            w2_8 <= 0; 
+            w2_9 <= 0;
+        end 
+    
     always @ (posedge clk) 
         begin 
-            if (reset) begin
-            w1_0 <= 0; 
-            w1_1 <= 0; 
-            w1_2 <= 0; 
-            w1_3 <= 0; 
-            w1_4 <= 0; 
-            w1_5 <= 0;  
-            w1_6 <= 0; 
-            w1_7 <= 0; 
-            w1_8 <= 0; 
-            w1_9 <= 0; 
-            w1_10 <= 0;   
-            w1_11 <= 0; 
-            w1_12 <= 0; 
-            w1_13 <= 0; 
-            w1_14 <= 0; 
-            w1_15 <= 0;  
-            w1_16 <= 0; 
-            w1_17 <= 0; 
-            w1_18 <= 0; 
-            w1_19 <= 0; 
-            w1_20 <= 0;  
-            w1_21 <= 0; 
-            w1_22 <= 0; 
-            w1_23 <= 0; 
-            w1_24 <= 0; 
-            w1_25 <= 0; 
-            w1_26 <= 0; 
-            w1_27 <= 0; 
-            w1_28 <= 0; 
-            w1_29 <= 0; 
-            w1_30 <= 0; 
-            w1_31 <= 0;  
-
-            end else begin
-                
-            w1_0 <= w00mem[ctr1]; 
-            w1_1 <= w01mem[ctr1]; 
-            w1_2 <= w02mem[ctr1]; 
-            w1_3 <= w03mem[ctr1]; 
-            w1_4 <= w04mem[ctr1]; 
-            w1_5 <= w05mem[ctr1];  
-            w1_6 <= w06mem[ctr1]; 
-            w1_7 <= w07mem[ctr1]; 
-            w1_8 <= w08mem[ctr1]; 
-            w1_9 <= w09mem[ctr1]; 
-            w1_10 <= w10mem[ctr1];   
-            w1_11 <= w11mem[ctr1]; 
-            w1_12 <= w12mem[ctr1]; 
-            w1_13 <= w13mem[ctr1]; 
-            w1_14 <= w14mem[ctr1]; 
-            w1_15 <= w15mem[ctr1];  
-            w1_16 <= w16mem[ctr1]; 
-            w1_17 <= w17mem[ctr1]; 
-            w1_18 <= w18mem[ctr1]; 
-            w1_19 <= w19mem[ctr1]; 
-            w1_20 <= w20mem[ctr1];  
-            w1_21 <= w21mem[ctr1]; 
-            w1_22 <= w22mem[ctr1]; 
-            w1_23 <= w23mem[ctr1]; 
-            w1_24 <= w24mem[ctr1]; 
-            w1_25 <= w25mem[ctr1]; 
-            w1_26 <= w26mem[ctr1]; 
-            w1_27 <= w27mem[ctr1]; 
-            w1_28 <= w28mem[ctr1]; 
-            w1_29 <= w29mem[ctr1]; 
-            w1_30 <= w30mem[ctr1]; 
-            w1_31 <= w31mem[ctr1]; 
-            end
-            
+            if (reset) 
+                begin
+                    w1_0 <= 0; 
+                    w1_1 <= 0; 
+                    w1_2 <= 0; 
+                    w1_3 <= 0; 
+                    w1_4 <= 0; 
+                    w1_5 <= 0;  
+                    w1_6 <= 0; 
+                    w1_7 <= 0; 
+                    w1_8 <= 0; 
+                    w1_9 <= 0; 
+                    w1_10 <= 0;   
+                    w1_11 <= 0; 
+                    w1_12 <= 0; 
+                    w1_13 <= 0; 
+                    w1_14 <= 0; 
+                    w1_15 <= 0;  
+                    w1_16 <= 0; 
+                    w1_17 <= 0; 
+                    w1_18 <= 0; 
+                    w1_19 <= 0; 
+                    w1_20 <= 0;  
+                    w1_21 <= 0; 
+                    w1_22 <= 0; 
+                    w1_23 <= 0; 
+                    w1_24 <= 0; 
+                    w1_25 <= 0; 
+                    w1_26 <= 0; 
+                    w1_27 <= 0; 
+                    w1_28 <= 0; 
+                    w1_29 <= 0; 
+                    w1_30 <= 0; 
+                    w1_31 <= 0;  
+                end 
+            else 
+                begin
+                    w1_0 <= w00mem[ctr1]; 
+                    w1_1 <= w01mem[ctr1]; 
+                    w1_2 <= w02mem[ctr1]; 
+                    w1_3 <= w03mem[ctr1]; 
+                    w1_4 <= w04mem[ctr1]; 
+                    w1_5 <= w05mem[ctr1];  
+                    w1_6 <= w06mem[ctr1]; 
+                    w1_7 <= w07mem[ctr1]; 
+                    w1_8 <= w08mem[ctr1]; 
+                    w1_9 <= w09mem[ctr1]; 
+                    w1_10 <= w10mem[ctr1];   
+                    w1_11 <= w11mem[ctr1]; 
+                    w1_12 <= w12mem[ctr1]; 
+                    w1_13 <= w13mem[ctr1]; 
+                    w1_14 <= w14mem[ctr1]; 
+                    w1_15 <= w15mem[ctr1];  
+                    w1_16 <= w16mem[ctr1]; 
+                    w1_17 <= w17mem[ctr1]; 
+                    w1_18 <= w18mem[ctr1]; 
+                    w1_19 <= w19mem[ctr1]; 
+                    w1_20 <= w20mem[ctr1];  
+                    w1_21 <= w21mem[ctr1]; 
+                    w1_22 <= w22mem[ctr1]; 
+                    w1_23 <= w23mem[ctr1]; 
+                    w1_24 <= w24mem[ctr1]; 
+                    w1_25 <= w25mem[ctr1]; 
+                    w1_26 <= w26mem[ctr1]; 
+                    w1_27 <= w27mem[ctr1]; 
+                    w1_28 <= w28mem[ctr1]; 
+                    w1_29 <= w29mem[ctr1]; 
+                    w1_30 <= w30mem[ctr1]; 
+                    w1_31 <= w31mem[ctr1]; 
+                end            
             w2_0 <= w32mem[ctr2]; 
             w2_1 <= w33mem[ctr2]; 
             w2_2 <= w34mem[ctr2]; 

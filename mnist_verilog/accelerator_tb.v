@@ -52,6 +52,8 @@ module accelerator_tb ();
 	// $dumpvars(0, "cpu_tb");
         $display("RUNNING TEST");
         clk = 0;
+        reset = 0;
+        #3
         reset = 1;   // This is active high reset
         #6         // At least 100 because Xilinx assumes 100ns reset in post-syn sim
         reset = 0;   // Reset removed - normal functioning resumes

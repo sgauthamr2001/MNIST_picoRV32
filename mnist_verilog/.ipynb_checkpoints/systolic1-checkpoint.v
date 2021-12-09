@@ -16,7 +16,10 @@ module systolic1 (
     reg [31:0] im;            
    
     always @(posedge clk) begin
-	    im <= image;
+        if(start)
+            im <= 0; 
+        else
+            im <= image;
     end	    
 	
     mac  mac0( .clk(clk), .start(start), .stop(stop), .w(w0), .im(im),  .p(p0)); 
@@ -52,8 +55,6 @@ module systolic1 (
     mac  mac30( .clk(clk), .start(start), .stop(stop), .w(w30), .im(im),  .p(p30));
     mac  mac31( .clk(clk), .start(start), .stop(stop), .w(w31), .im(im),  .p(p31));
  
-
-   
 endmodule // systolic1
 
 

@@ -23,7 +23,6 @@ module systolic2 (
     mac  mac8( .clk(clk), .start(start), .stop(stop), .w(w8), .im(relu_out),  .p(p8));
     mac  mac9( .clk(clk), .start(start), .stop(stop), .w(w9), .im(relu_out),  .p(p9));
 
-   
 endmodule // systolic2
 
 

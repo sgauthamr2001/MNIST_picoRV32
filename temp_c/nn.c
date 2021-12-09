@@ -4,7 +4,7 @@
 #define D 784           // Number of pixels in an MNIST image 
 #define H 32            // Number of channels of hidden layer
 #define C 10            // Number of classes
-#define N 10            // Number of examples 
+#define N 1             // Number of examples 
 
 int main(int argc, const char * argv[]) {
     
@@ -157,21 +157,21 @@ int main(int argc, const char * argv[]) {
         {
             max_val += hidden[k]*W2[k][0]; 
         }
-        
         for (int j = 1; j < C; j++)
         {
             int activation = *(b2 + j);   
             for (int k = 0; k < H; k++) 
             {
                 activation += hidden[k]*W2[k][j]; 
-            }      
+            }
             if(activation > max_val)
             {
                 max_val = activation; 
                 pred_class[n] = j;     
             }
+            
         }
-        printf("[Pred,True]_%d : (%d, %d)\n",n,pred_class[n],true_class[n]);
+     printf("[Pred,True]_%d : (%d, %d)\n",n,pred_class[n],true_class[n]);
     }  
     
     free(W1); 
