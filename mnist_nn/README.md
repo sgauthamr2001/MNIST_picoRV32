@@ -29,7 +29,7 @@ The code comes with weights, biases and input image in `firmware/wbd.hex` - this
 ```sh
 $ make
 ```
-Just typing the above command (while you are in the `mnits_nn` folder, not inside one of the subfolders) will take care of compiling and running with iverilog.
+Just typing the above command (while you are in the `mnist_nn` folder, not inside one of the subfolders) will take care of compiling and running with iverilog.
 
 **WARNING**: This is *horrendously* slow - it takes about 4-5 *minutes* to run on the default input image, which is just a single 28 x 28 MNIST image.  
 
