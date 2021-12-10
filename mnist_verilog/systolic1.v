@@ -1,27 +1,44 @@
 //                              -*- Mode: Verilog -*-
 // Filename        : systolic1.v
 // Description     : Systolic Array Multiplier for Stage 1
-
-
+// Purpose         : Connects all the mac units for the first layer with the inputs
 
 module systolic1 (
-		   input 		 clk, start, stop,
-		   // Integer inputs corresponding to the weights
-		   input [31:0] 	 w0, w1, w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12, w13, w14, w15, w16, w17, w18, w19, w20, w21, w22, w23, w24, w25, w26, w27, w28, w29, w30, w31, 
-    input [31:0]          image,                                  // Integer input corresponding to the image
-    output [31:0]         p0, p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15, p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31  // Output integers for the result
-		 ) ;
+	input clk, start, stop,
+    // Integer inputs corresponding to the weights
+    input [31:0] 
+    w0,w1,w2,w3,w4,
+    w5,w6,w7,w8,w9,
+    w10,w11,w12,w13,
+    w14,w15,w16,w17, 
+    w18,w19,w20,w21, 
+    w22,w23,w24,w25, 
+    w26,w27,w28,w29, 
+    w30,w31, 
+    input [31:0] image,  // Integer input corresponding to the image
+    // Output integers for the result
+    output [31:0]
+    p0,p1,p2,p3,p4,
+    p5,p6,p7,p8,p9,
+    p10,p11,p12,p13,
+    p14,p15,p16,p17,
+    p18,p19,p20,p21,
+    p22,p23,p24,p25,
+    p26,p27,p28,p29,
+    p30,p31  
+) ;
 
- 
+    // Corresponds to the register in the data path in the schematic 
     reg [31:0] im;            
-   
-    always @(posedge clk) begin
+    always @(posedge clk) 
+    begin
         if(start)
             im <= 0; 
         else
             im <= image;
     end	    
-	
+
+    // Instantiating the MAC units
     mac  mac0( .clk(clk), .start(start), .stop(stop), .w(w0), .im(im),  .p(p0)); 
     mac  mac1( .clk(clk), .start(start), .stop(stop), .w(w1), .im(im),  .p(p1));
     mac  mac2( .clk(clk), .start(start), .stop(stop), .w(w2), .im(im),  .p(p2));
@@ -54,7 +71,5 @@ module systolic1 (
     mac  mac29( .clk(clk), .start(start), .stop(stop), .w(w29), .im(im),  .p(p29));
     mac  mac30( .clk(clk), .start(start), .stop(stop), .w(w30), .im(im),  .p(p30));
     mac  mac31( .clk(clk), .start(start), .stop(stop), .w(w31), .im(im),  .p(p31));
- 
+
 endmodule // systolic1
-
-

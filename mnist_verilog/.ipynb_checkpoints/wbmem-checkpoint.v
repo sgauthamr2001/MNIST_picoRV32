@@ -1,11 +1,15 @@
-`timescale 1ns/1ps
+//                              -*- Mode: Verilog -*-
+// Filename        : wbmem.v
+// Description     : Weights memory module 
+// Purpose         : Coressponds to the module which gives out weights
      
 module wbmem (
-    input [31:0] ctr1, 
-    input [31:0] ctr2, 
-    input clk,
-    input reset,                             // This reset to be checked - whether to include or not in actual
-    input re, 
+    input [31:0] ctr1,    // Acts as address to first set of weights 
+    input [31:0] ctr2,    // Acts as address to second set of weights
+    input clk,            // Required for synchornous reads to correspond to block ram
+    input reset,          // Reset signal 
+    input re,             // Read enable for synthesis to BRAM 
+    // Outputs for [W1|b1] 
     output reg [31:0]   w1_0,
 	output reg [31:0]   w1_1,
 	output reg [31:0]   w1_2,
@@ -38,8 +42,7 @@ module wbmem (
 	output reg [31:0]   w1_29,
 	output reg [31:0]   w1_30,
 	output reg [31:0]   w1_31,
-
-
+    // Outputs for [W2|b2]
     output reg [31:0] w2_0,
     output reg [31:0] w2_1,
     output reg [31:0] w2_2,
@@ -52,9 +55,8 @@ module wbmem (
     output reg [31:0] w2_9 
 );
     
-    
     // Define a 1-K location memory (4KB) correspnding to [W1|b1] and 32 such locations.
-
+    
     reg [31:0] w00mem[0:1023];
     reg [31:0] w01mem[0:1023]; 
     reg [31:0] w02mem[0:1023]; 
@@ -101,6 +103,7 @@ module wbmem (
     reg [31:0] w40mem[0:1023];
     reg [31:0] w41mem[0:1023];     
     
+    // Reading the weights from .mem files, generated using nn.c 
     initial 
     begin 
         $readmemh({"weights/w00_0.mem"},w00mem);
@@ -135,7 +138,6 @@ module wbmem (
         $readmemh({"weights/w29_0.mem"},w29mem);
         $readmemh({"weights/w30_0.mem"},w30mem);
         $readmemh({"weights/w31_0.mem"},w31mem);
-        
         $readmemh({"weights/w00_1.mem"},w32mem);
         $readmemh({"weights/w01_1.mem"},w33mem);
         $readmemh({"weights/w02_1.mem"},w34mem);
@@ -146,7 +148,6 @@ module wbmem (
         $readmemh({"weights/w07_1.mem"},w39mem);
         $readmemh({"weights/w08_1.mem"},w40mem);
         $readmemh({"weights/w09_1.mem"},w41mem);
-
     end
     
     initial 
@@ -201,7 +202,7 @@ module wbmem (
                     w1_31 <= 0;  
                 end 
             else 
-                if(re)
+            if(re)
                 begin
                     w1_0 <= w00mem[ctr1]; 
                     w1_1 <= w01mem[ctr1]; 
@@ -235,19 +236,21 @@ module wbmem (
                     w1_29 <= w29mem[ctr1]; 
                     w1_30 <= w30mem[ctr1]; 
                     w1_31 <= w31mem[ctr1]; 
-                              w2_0 <= w32mem[ctr2]; 
                 end 
              
-            if(re) begin 
-            w2_1 <= w33mem[ctr2]; 
-            w2_2 <= w34mem[ctr2]; 
-            w2_3 <= w35mem[ctr2]; 
-            w2_4 <= w36mem[ctr2]; 
-            w2_5 <= w37mem[ctr2];  
-            w2_6 <= w38mem[ctr2]; 
-            w2_7 <= w39mem[ctr2]; 
-            w2_8 <= w40mem[ctr2]; 
-            w2_9 <= w41mem[ctr2]; 
-            end        
+            if(re) 
+                begin 
+                    w2_0 <= w32mem[ctr2]; 
+                    w2_1 <= w33mem[ctr2]; 
+                    w2_2 <= w34mem[ctr2]; 
+                    w2_3 <= w35mem[ctr2]; 
+                    w2_4 <= w36mem[ctr2]; 
+                    w2_5 <= w37mem[ctr2];  
+                    w2_6 <= w38mem[ctr2]; 
+                    w2_7 <= w39mem[ctr2]; 
+                    w2_8 <= w40mem[ctr2]; 
+                    w2_9 <= w41mem[ctr2]; 
+                end        
         end 
-endmodule
+    
+endmodule // wbmem 

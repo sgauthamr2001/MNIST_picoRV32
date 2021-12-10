@@ -1,28 +1,27 @@
 //                              -*- Mode: Verilog -*-
 // Filename        : accelerator.v
-// Description     : NN Accelerator
-
-
+// Description     : Top module of the NN Accelerator
+// Purpose         : To integrate the all the sub-modules shown in the block-diagram 
 
 module accelerator (
-		   input 		 clk, reset,
-    input [31:0]          image,                                  // Integer input corresponding to the image
-           output                ready,
-//		   output reg [31:0]         result;                                 // Output integers for the result
-    output [31:0]         result0,                                 // Output integers for the result
-    output [31:0]         result1,                                 // Output integers for the result
-    output [31:0]         result2,                                 // Output integers for the result
-    output [31:0]         result3,                                 // Output integers for the result
-    output [31:0]         result4,                                 // Output integers for the result
-    output [31:0]         result5,                                 // Output integers for the result
-    output [31:0]         result6,                                 // Output integers for the result
-    output [31:0]         result7,                                 // Output integers for the result
-    output [31:0]         result8,                                 // Output integers for the result
-    output [31:0]         result9,                                 // Output integers for the result
-    
-    output [31:0] counter1
-            
+    input clk, 
+    input reset,
+    input [31:0] image,      // Integer input corresponding to the image
+    output ready,
+    output [31:0] result0,        // Output integers for the score0
+    output [31:0] result1,        // Output integers for the score1
+    output [31:0] result2,        // Output integers for the score2
+    output [31:0] result3,        // Output integers for the score3
+    output [31:0] result4,        // Output integers for the score4
+    output [31:0] result5,        // Output integers for the score5
+    output [31:0] result6,        // Output integers for the score6
+    output [31:0] result7,        // Output integers for the score7
+    output [31:0] result8,        // Output integers for the score8
+    output [31:0] result9,        // Output integers for the score9
+    output [31:0] counter1        // Output control signal for test purposes 
 ) ;
+    
+    // Wires to connect output weights from wbmem module 
     
 	wire [31:0]   w1_0;
 	wire [31:0]   w1_1;
@@ -67,6 +66,8 @@ module accelerator (
 	wire [31:0]   w2_7;
 	wire [31:0]   w2_8;
 	wire [31:0]   w2_9;
+    
+    // Wires to corresponding to MAC's of systolic layer-1 
 
 	wire [31:0]   p0;
 	wire [31:0]   p1;
@@ -101,20 +102,10 @@ module accelerator (
 	wire [31:0]   p30;
 	wire [31:0]   p31;
 
+    // Input to the layer of systolic array-2  
 	wire [31:0]   relu_out;
-    
-/*    
-	wire [31:0]   result0;
-	wire [31:0]   result1;
-	wire [31:0]   result2;
-	wire [31:0]   result3;
-	wire [31:0]   result4;
-	wire [31:0]   result5;
-	wire [31:0]   result6;
-	wire [31:0]   result7;
-	wire [31:0]   result8;
-	wire [31:0]   result9;
-*/    
+  
+    // Control signals for the whole module
 
 	wire [31:0]   counter1;
 	wire [31:0]   counter2;
@@ -127,8 +118,8 @@ module accelerator (
 
     assign   ready = stop1 & stop2;
     
-    // Insert code to send out result sequentially, rather than parallely right now
-
+    // Instantiating several different modules 
+    
     systolic1 systolic1 (.clk(clk), 
                          .start(start1), 
                          .stop(stop1), 
@@ -324,4 +315,4 @@ module accelerator (
                  .w2_9(w2_9)
                 ); 
 
-endmodule
+endmodule // accelerator
