@@ -3,10 +3,9 @@
 
 This is a baseline code for the course project of EE2003 at IIT Madras.
 
-*Note*: This is a forked repository of PicoRV32 - the original README is available at [[README_picorv32.md]].
+*Note*: This is a forked repository of PicoRV32 (given below)
 
 Acknowledgements:
-
 - [PicoRV32](https://github.com/YosysHQ/picorv32) - from C. Wolf (YosysHQ).  
 
 ## Problem statement
