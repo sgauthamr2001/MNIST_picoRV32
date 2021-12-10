@@ -7,3 +7,9 @@ The baseline code for the project is available [here](/mnist_nn)
 The accelerator designed is available [here](/mnist_verilog) 
 
 The implementation with the accelerator integrated with the PicoRV32 is available [here](/mnist_integrated) 
+
+
+## Group Members :
+- Shashank Nag, EE19B118
+- Sai Gautham Ravipati, EE19B053
+- Vishnu Varma V, EE19B059
