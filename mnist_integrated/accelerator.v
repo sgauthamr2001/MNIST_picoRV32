@@ -1,30 +1,28 @@
 //                              -*- Mode: Verilog -*-
 // Filename        : accelerator.v
-// Description     : NN Accelerator
-
-
+// Description     : Top module of the NN Accelerator
+// Purpose         : To integrate the all the sub-modules of the accelerator
 
 module accelerator (
-		   input 		 clk, reset,
-    input [(785*32)-1:0]  in_image,                                  // Integer input corresponding to the image
+	input 		 clk, reset,
+    input [(785*32)-1:0]  in_image,    // Input image signals sent by the PicoRV32 core
+    output                ready,       // Ready signal to be sent to PicoRV32 core
+    output [31:0] result0,        // Output integers for the score0
+    output [31:0] result1,        // Output integers for the score1
+    output [31:0] result2,        // Output integers for the score2
+    output [31:0] result3,        // Output integers for the score3
+    output [31:0] result4,        // Output integers for the score4
+    output [31:0] result5,        // Output integers for the score5
+    output [31:0] result6,        // Output integers for the score6
+    output [31:0] result7,        // Output integers for the score7
+    output [31:0] result8,        // Output integers for the score8
+    output [31:0] result9         // Output integers for the score9        
+);
     
-    output                ready,
-    output [31:0]         result0,                                 // Output integers for the result
-    output [31:0]         result1,                                 // Output integers for the result
-    output [31:0]         result2,                                 // Output integers for the result
-    output [31:0]         result3,                                 // Output integers for the result
-    output [31:0]         result4,                                 // Output integers for the result
-    output [31:0]         result5,                                 // Output integers for the result
-    output [31:0]         result6,                                 // Output integers for the result
-    output [31:0]         result7,                                 // Output integers for the result
-    output [31:0]         result8,                                 // Output integers for the result
-    output [31:0]         result9                                 // Output integers for the result
+    wire [31:0] image;                    // Image being sent to systolic array-1 on each cycle 
+    wire [(785*32)-1:0] shifted_image;    // Intermediate signal 
     
-    //output [31:0] counter1
-            
-) ;
-    wire [31:0] image;
-    wire [(785*32)-1:0]   shifted_image;
+    // Wires to connect output weights from wbmem module 
 	wire [31:0]   w1_0;
 	wire [31:0]   w1_1;
 	wire [31:0]   w1_2;
@@ -58,6 +56,8 @@ module accelerator (
 	wire [31:0]   w1_30;
 	wire [31:0]   w1_31;
 
+    // Wires to corresponding to MAC's of systolic layer-1 
+    
 	wire [31:0]   w2_0;
 	wire [31:0]   w2_1;
 	wire [31:0]   w2_2;
@@ -68,6 +68,8 @@ module accelerator (
 	wire [31:0]   w2_7;
 	wire [31:0]   w2_8;
 	wire [31:0]   w2_9;
+    
+    // Wires to corresponding to MAC's of systolic layer-1 
 
 	wire [31:0]   p0;
 	wire [31:0]   p1;
@@ -102,17 +104,20 @@ module accelerator (
 	wire [31:0]   p30;
 	wire [31:0]   p31;
 
+    // Input to the layer of systolic array-2 
 	wire [31:0]   relu_out;
     
-    reg           invoked;
+    reg invoked;    // Shall remain 1, once reset is asserted, used in ready signal 
     
-    initial invoked <= 0;
+    initial invoked <= 0;  
     always @(posedge clk) begin
         if (reset)  invoked <= 1;
         else        invoked <= invoked;
     end 
 
-	wire [31:0]   counter1;
+    // Control signals for the whole module
+    
+    wire [31:0]   counter1;    
 	wire [31:0]   counter2;
 
 	wire          start1;
@@ -123,8 +128,12 @@ module accelerator (
 
     assign   ready = invoked & stop1 & stop2;
     
-    assign   shifted_image = $unsigned(in_image)>>(counter1*32);
+    // Sending in next 32 bits of image array every clock cycle
+    
+    assign   shifted_image = $unsigned(in_image)>>(counter1*32);    
     assign   image = shifted_image[31:0];
+    
+    // Instantiating several different modules 
     
     systolic1 systolic1 (.clk(clk), 
                          .start(start1), 
@@ -247,8 +256,8 @@ module accelerator (
                          .w7(w2_7),
                          .w8(w2_8),
                          .w9(w2_9),
-                         .p0(result0),                            //debug
-                         .p1(result1),                            //debug
+                         .p0(result0),                          
+                         .p1(result1),                          
                          .p2(result2),
                          .p3(result3),
                          .p4(result4),
@@ -262,21 +271,21 @@ module accelerator (
    
     control control (.clk(clk), 
                      .reset(reset*invoked),
-                 .counter1(counter1),
-                 .counter2(counter2), 
-                 .start1(start1), 
-                 .start2(start2), 
-                 .stop1(stop1), 
-                 .stop2(stop2), 
-                 .rdata1(w1_0), 
-                 .rdata2(w2_0)
-                );
+                     .counter1(counter1),
+                     .counter2(counter2), 
+                     .start1(start1), 
+                     .start2(start2), 
+                     .stop1(stop1), 
+                     .stop2(stop2), 
+                     .rdata1(w1_0), 
+                     .rdata2(w2_0)
+                    );
 
     wbmem wbmem (.clk(clk), 
                  .ctr1(counter1), 
                  .ctr2(counter2), 
                  .reset(start1),
-		 .re(1),
+                 .re(1'b1),
                  .w1_0(w1_0), 
                  .w1_1(w1_1),
                  .w1_2(w1_2),
@@ -321,4 +330,4 @@ module accelerator (
                  .w2_9(w2_9)
                 ); 
 
-endmodule
+endmodule  // accelerator
