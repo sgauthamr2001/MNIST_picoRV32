@@ -7,7 +7,6 @@
 
 #include "firmware.h"
 #include "stats_helper.c"    // Include the stats helper functions up front so they can also be used
-#include<stdio.h> 
 
 #define NULL ((void *)0)
 #define WBDBASE 0x30000000    // W, b and image data starts from here in order W1, b1, W2, b2, X. 
@@ -31,7 +30,7 @@
 *************************************************************************/
 void hello(void)
 {
-	int *p = (int *)WBDBASE;        // p points to the start of data
+    int *p = (int *)WBDBASE;        // p points to the start of data
     int hidden[H];                  // Stored in stack to hold hidden layer activations 
     int scores[C];                  // Stored in stack to hold final class scores 
   
@@ -78,7 +77,7 @@ void hello(void)
 	print_str("Completed the forward pass in ");
 	print_dec(t_end - t_start);
 	print_str(" cycles.\n");
-    print_str("Printing the scores in hex.\n");
+    	print_str("Printing the scores in hex.\n");
     
     // Priniting the scores 
     
