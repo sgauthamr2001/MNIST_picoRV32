@@ -23,7 +23,7 @@ This is a project based on inference of neural networks on MNIST images. The bas
 ### Step 1 - Input image
 The code comes with (28x28) image reshaped to (784 x 1) in `firmware/xdata.hex` generated similarly to that was how `wbd.hex` was generated in baseline code.  
 
-### Step 2.1 - Build and run with iverilog
+### Step 2 - Build and run with iverilog
 
 ```sh
 $ make
@@ -31,13 +31,6 @@ $ make
 Just typing the above command (while you are in the `mnist_integrated` folder, not inside one of the subfolders) will take care of compiling and running with iverilog.
 
 This is fairly fast enough and it takes about 10s to run on the default input image, which is a single 28 x 28 MNIST image.  
-
-### Step 2.2 - Build and run with verilator
-Using `verilator` makes the inference faster, but not needed since make is sufficiently faster. 
-To run this using verilator, you can just type,  
-```sh
-$ make test_verilator
-```
 
 ### Step 3 - Understand the results
 When you run the simuation, it prints out the scores for each class on the terminal. The true value of results can be compared to the ones obtained by executing `temp_c_files/nn.c` to verify the correctness, and nn.c was veriified with a Tensorflow code. 
