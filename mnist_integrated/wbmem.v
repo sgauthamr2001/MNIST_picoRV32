@@ -5,6 +5,7 @@ module wbmem (
     input [31:0] ctr2, 
     input clk,
     input reset,                             // This reset to be checked - whether to include or not in actual
+    input re,
     output reg [31:0]   w1_0,
 	output reg [31:0]   w1_1,
 	output reg [31:0]   w1_2,
@@ -149,6 +150,7 @@ module wbmem (
     end
     always @ (posedge clk) 
         begin 
+		if(re) begin
                     w1_0 <= w00mem[ctr1]; 
                     w1_1 <= w01mem[ctr1]; 
                     w1_2 <= w02mem[ctr1]; 
@@ -191,5 +193,6 @@ module wbmem (
             w2_7 <= w39mem[ctr2]; 
             w2_8 <= w40mem[ctr2]; 
             w2_9 <= w41mem[ctr2]; 
+		end
         end 
 endmodule
