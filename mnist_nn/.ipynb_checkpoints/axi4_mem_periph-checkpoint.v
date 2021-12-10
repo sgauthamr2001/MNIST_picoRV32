@@ -30,22 +30,8 @@ module axi4_mem_periph #(
 	output            tests_passed
 	// output reg        tests_passed
 );
-    reg [(784*32)-1:0] in_image;
-    wire ready;
-    wire [31:0]   result0;
-	wire [31:0]   result1;
-	wire [31:0]   result2;
-	wire [31:0]   result3;
-	wire [31:0]   result4;
-	wire [31:0]   result5;
-	wire [31:0]   result6;
-	wire [31:0]   result7;
-	wire [31:0]   result8;
-	wire [31:0]   result9;
-    accelerator accel (.clk(clk), .reset(reset), .in_image(in_image), .ready(ready), .result0(result0), .result1(result1), .result2(result2), .result3(result3), .result4(result4), .result5(result5), .result6(result6), .result7(result7), .result8(result8), .result9(result9));
-    
 	reg [31:0]   memory [0:2048*1024/4-1] /* verilator public */;
-    reg [31:0]   wdmem  [0:1024*1024/4-1] /* verilator public */;     // Memory to store weights, bias and val. data  (1 MB)  
+    reg [31:0]   wdmem  [0:1024*1024/4-1] /* verilator public */;     // Memory to store weights, bias and image data  (1 MB)  
     reg [31:0]   wkmem  [0:2048*1024/4-1] /* verilator public */;     // Working memory (2 MB) 
 
 	reg verbose;
@@ -55,7 +41,7 @@ module axi4_mem_periph #(
 	// Could not load this from the test bench for some reason?
 	integer i;
 	initial begin
-        $readmemh("firmware/wbd.hex", wdmem);
+        $readmemh("firmware/wbd.hex", wdmem);        // wbd.hex holds the data of weights, bias and image
 		for (i=0; i<1000000; i=i+1) begin
 			wkmem[i] = 0;
 		end
@@ -128,61 +114,6 @@ module axi4_mem_periph #(
 			mem_axi_rdata <= wkmem[(latched_raddr-'h4000_0000) >> 2];
 			mem_axi_rvalid <= 1;
 			latched_raddr_en = 0; // Why?
-        end else
-            if(latched_raddr == TBD ) begin
-			mem_axi_rdata <= ready;
-			mem_axi_rvalid <= 1;
-			latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD) begin
-            mem_axi_rdata <= result0;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 4) begin
-            mem_axi_rdata <= result1;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 8) begin
-            mem_axi_rdata <= result2;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 12) begin
-            mem_axi_rdata <= result3;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 16) begin
-            mem_axi_rdata <= result4;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 20) begin
-            mem_axi_rdata <= result5;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 24) begin
-            mem_axi_rdata <= result6;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 28) begin
-            mem_axi_rdata <= result7;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 32) begin
-            mem_axi_rdata <= result8;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
-        end else
-        if(latched_raddr == TBD + 36) begin
-            mem_axi_rdata <= result9;
-            mem_axi_rvalid <= 1;
-            latched_raddr_en = 0; // Why?       
 		end else begin
 			$display("OUT-OF-BOUNDS MEMORY READ FROM %08x", latched_raddr);
 			$finish;
@@ -221,17 +152,6 @@ module axi4_mem_periph #(
 			if (latched_wstrb[1]) wkmem[(latched_waddr-'h4000_0000) >> 2][15: 8] <= latched_wdata[15: 8];
 			if (latched_wstrb[2]) wkmem[(latched_waddr-'h4000_0000) >> 2][23:16] <= latched_wdata[23:16];
 			if (latched_wstrb[3]) wkmem[(latched_waddr-'h4000_0000) >> 2][31:24] <= latched_wdata[31:24];
-        if (latched_waddr == 32'h3000_0000) begin // Add custom functionality
-            reset <= latched_wdata;
-			$display("Write %3d to the reset signal", latched_wdata);
-		end
-            Genvar gi;
-            for(gi=0;gi&lt;(784);gi=gi+1) begin : genbit
-                else if (latched_waddr == IMG_BASETBD + (4*gi)) begin // Add custom functionality getting image from C code
-                    in_image[(32*(gi+1))-1:32*gi] <= latched_wdata;
-                end
-            end
-			//$display("Write %3d to mult 'a' input", latched_wdata);
 		end else begin
 			$display("OUT-OF-BOUNDS MEMORY WRITE TO %08x", latched_waddr);
 			$finish;
@@ -291,4 +211,3 @@ module axi4_mem_periph #(
 		if (!mem_axi_bvalid && latched_waddr_en && latched_wdata_en) handle_axi_bvalid;
 	end
 endmodule
-

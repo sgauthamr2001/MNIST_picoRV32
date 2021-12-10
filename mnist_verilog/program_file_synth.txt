@@ -1,0 +1,4 @@
+accelerator_tb_synth.v
+accelerator_synth.v
+xmem.v
+/usr/share/yosys/xilinx/cells_sim.v

@@ -31,7 +31,7 @@ module axi4_mem_periph #(
 	// output reg        tests_passed
 );
 	reg [31:0]   memory [0:2048*1024/4-1] /* verilator public */;
-    reg [31:0]   wdmem  [0:1024*1024/4-1] /* verilator public */;     // Memory to store weights, bias and val. data  (1 MB)  
+    reg [31:0]   wdmem  [0:1024*1024/4-1] /* verilator public */;     // Memory to store weights, bias and image data  (1 MB)  
     reg [31:0]   wkmem  [0:2048*1024/4-1] /* verilator public */;     // Working memory (2 MB) 
 
 	reg verbose;
@@ -41,7 +41,7 @@ module axi4_mem_periph #(
 	// Could not load this from the test bench for some reason?
 	integer i;
 	initial begin
-        $readmemh("firmware/wbd.hex", wdmem);
+        $readmemh("firmware/wbd.hex", wdmem);        // wbd.hex holds the data of weights, bias and image
 		for (i=0; i<1000000; i=i+1) begin
 			wkmem[i] = 0;
 		end

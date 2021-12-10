@@ -279,6 +279,7 @@ module accelerator (
                  .ctr1(counter1), 
                  .ctr2(counter2), 
                  .reset(start1), 
+                 .re(1'b1),
                  .w1_0(w1_0), 
                  .w1_1(w1_1),
                  .w1_2(w1_2),
