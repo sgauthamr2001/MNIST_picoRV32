@@ -4,7 +4,7 @@
 #define D 784           // Number of pixels in an MNIST image 
 #define H 32            // Number of channels of hidden layer
 #define C 10            // Number of classes
-#define N 1             // Number of examples (There are 100 examples in file to check for accuracy) 
+#define N 1             // Number of examples (There are 10 examples in file to check for accuracy) 
 
 // Uncomment below lines to populate wbd.hex 
 
