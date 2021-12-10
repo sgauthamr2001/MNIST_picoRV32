@@ -1,0 +1,180 @@
+8.26. Printing statistics.
+
+=== accelerator ===
+
+   Number of wires:                119
+   Number of wire bits:           2847
+   Number of public wires:          95
+   Number of public wire bits:    2823
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     LUT2                            1
+     LUT3                            1
+     LUT5                            1
+     LUT6                           13
+     MUXF7                           6
+     MUXF8                           3
+     control                         1
+     relu                            1
+     systolic1                       1
+     systolic2                       1
+     wbmem                           1
+
+   Estimated number of LCs:         15
+
+=== control ===
+
+   Number of wires:                138
+   Number of wire bits:            386
+   Number of public wires:          10
+   Number of public wire bits:     134
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                316
+     FDRE                           64
+     LUT1                            2
+     LUT2                           32
+     LUT4                            2
+     LUT5                            2
+     LUT6                           64
+     MUXCY                          62
+     MUXF7                          16
+     MUXF8                           8
+     XORCY                          64
+
+   Estimated number of LCs:         83
+
+=== mac ===
+
+   Number of wires:               1380
+   Number of wire bits:           1598
+   Number of public wires:           7
+   Number of public wire bits:     163
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1466
+     FDRE                           32
+     LUT2                          131
+     LUT3                           80
+     LUT4                           68
+     LUT5                           57
+     LUT6                          842
+     MUXCY                          31
+     MUXF7                         166
+     MUXF8                          27
+     XORCY                          32
+
+   Estimated number of LCs:       1047
+
+=== relu ===
+
+   Number of wires:               4564
+   Number of wire bits:           6641
+   Number of public wires:          35
+   Number of public wire bits:    1089
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5520
+     FDRE                           32
+     LUT1                         1024
+     LUT2                            2
+     LUT3                            2
+     LUT4                           12
+     LUT5                            1
+     LUT6                         2209
+     MUXCY                        1024
+     MUXF7                        1062
+     MUXF8                         120
+     XORCY                          32
+
+   Estimated number of LCs:       2730
+
+=== systolic1 ===
+
+   Number of wires:                 70
+   Number of wire bits:           2147
+   Number of public wires:          69
+   Number of public wire bits:    2115
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 96
+     FDRE                           32
+     LUT2                           32
+     mac                            32
+
+   Estimated number of LCs:         16
+
+=== systolic2 ===
+
+   Number of wires:                 24
+   Number of wire bits:            675
+   Number of public wires:          24
+   Number of public wire bits:     675
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     mac                            10
+
+   Estimated number of LCs:          0
+
+=== wbmem ===
+
+   Number of wires:              50347
+   Number of wire bits:         1386261
+   Number of public wires:       43055
+   Number of public wire bits:  1377667
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               8032
+     FDRE                          391
+     LUT2                          214
+     LUT3                           98
+     LUT4                          140
+     LUT5                          207
+     LUT6                         4534
+     MUXF7                        1939
+     MUXF8                         509
+
+   Estimated number of LCs:       4979
+
+=== design hierarchy ===
+
+   accelerator                       1
+     control                         1
+     relu                            1
+     systolic1                       1
+       mac                          32
+     systolic2                       1
+       mac                          10
+     wbmem                           1
+
+   Number of wires:             113222
+   Number of wire bits:         1466073
+   Number of public wires:       43582
+   Number of public wire bits:  1391349
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              75529
+     FDRE                         1863
+     LUT1                         1026
+     LUT2                         5783
+     LUT3                         3461
+     LUT4                         3010
+     LUT5                         2605
+     LUT6                        42184
+     MUXCY                        2388
+     MUXF7                        9995
+     MUXF8                        1774
+     XORCY                        1440
+
+   Estimated number of LCs:      51260
+   
