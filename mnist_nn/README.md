@@ -10,7 +10,7 @@ Acknowledgements:
 
 ## Problem statement
 
-This is a project based on inference of neural networks on MNIST images. The baseline code written in C, is available at `firmware/hello.c` and it can be run under the constrained environment of the picorv processor.
+This is a project based on inference of neural networks on MNIST images. The baseline code written in C, is available at `firmware/hello.c` and it can be run under the constrained environment of the picorv processor. Post training quantisation has been performed, so the weights are integers. 
 
 This means that there isn't access to things like File Input/Output, memory management (`malloc` etc.) or `printf` style statements that can be usually used for debugging.
 
