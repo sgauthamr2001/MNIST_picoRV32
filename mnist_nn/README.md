@@ -42,4 +42,4 @@ $ make test_verilator
 ```
 
 ### Step 3 - understand the results
-When you run the code, it prints out the scores for each class on the terminal. The true value of results can be obtained by running make, can be compared to the ones obtained by executing `temp_c_files/nn.c` to verify the correctnes, and nn.c was veriified with a Tensorflow code. 
+When you run the code, it prints out the scores for each class on the terminal. The true value of results can be obtained by running make, can be compared to the ones obtained by executing `temp_c_files/nn.c` to verify the correctness, and nn.c was veriified with a Tensorflow code. 
