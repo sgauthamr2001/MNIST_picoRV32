@@ -1,5 +1,5 @@
 
-# MNIST Neural Network run on interaced accelerator
+# MNIST Neural Network run on interfaced accelerator
 
 This is a integrated peripheral code for the course project of EE2003 at IIT Madras.
 
