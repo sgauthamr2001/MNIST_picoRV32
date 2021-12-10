@@ -1,4 +1,4 @@
-Verilog code for the accelerator
+# Verilog code for the accelerator
 - To exploit parallelism the architecutre given below has been used and on each cycle one pixel is being processed.
 - Weights are read in parallely using multiple BRAM's, and activations are computed parallely using multiple MAC's. 
 - Each module in the block diagram corresponds to the respective verilog implementation and are self-explanatory. 
