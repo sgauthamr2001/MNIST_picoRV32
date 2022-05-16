@@ -8,6 +8,7 @@ The accelerator designed is available [here](/mnist_verilog)
 
 The implementation with the accelerator integrated with the PicoRV32 is available [here](/mnist_integrated) 
 
+The link to Video demonstration of project [here](https://youtu.be/cVglBVtG-lI)
 
 ## Group Members :
 - Shashank Nag, EE19B118
