@@ -10,7 +10,7 @@ Acknowledgements:
 
 ## Problem statement
 
-This is a project based on inference of neural networks on MNIST images. The baseline code written in C, is available at `mnist_nn/firmware/hello.c` and it can be run under the constrained environment of the picorv processor. Post training quantisation has been performed, so the weights are integers, and each pixel is an integer from [0-255]. The accelerator built using verilog in `mnist_verilog` is used to interface with the PicoRV32 to speed-up the inference of neural networks.  
+<p align = "justify"> This is a project based on inference of neural networks on MNIST images. The baseline code written in C, is available at `mnist_nn/firmware/hello.c` and it can be run under the constrained environment of the picorv processor. Post training quantisation has been performed, so the weights are integers, and each pixel is an integer from [0-255]. The accelerator built using verilog in `mnist_verilog` is used to interface with the PicoRV32 to speed-up the inference of neural networks.  </p>
 
 ## Connecting the peripheral with PicoRV32 
 - Certain address's are mapped to obtain particular functionality, and same can be reffered to the C code in firmware.
