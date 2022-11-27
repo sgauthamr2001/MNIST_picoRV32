@@ -11,6 +11,6 @@ The implementation with the accelerator integrated with the PicoRV32 is availabl
 The link to Video demonstration of project [here](https://youtu.be/cVglBVtG-lI)
 
 ## Group Members :
-- Shashank Nag, EE19B118
 - Sai Gautham Ravipati, EE19B053
+- Shashank Nag, EE19B118
 - Vishnu Varma V, EE19B059
